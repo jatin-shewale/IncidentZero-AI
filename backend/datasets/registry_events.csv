@@ -1,0 +1,26 @@
+timestamp,host,user,key,value,action
+2026-07-30 07:00:00,ENG-PC-019,sarah.williams,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 07:25:00,SALES-PC-002,sophia.anderson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 07:50:00,SALES-PC-002,emily.davis,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 08:15:00,FILE-SERVER-02,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 08:40:00,VPN-GW-01,john.smith,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 09:05:00,FIN-PC-011,john.smith,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 09:30:00,DC-SERVER-01,ava.jackson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 09:55:00,FILE-SERVER-02,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 10:20:00,DC-SERVER-01,daniel.thomas,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 10:45:00,FIN-PC-023,ava.jackson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 11:10:00,DC-SERVER-01,john.smith,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 11:35:00,DC-SERVER-01,david.wilson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 12:00:00,DC-SERVER-01,daniel.thomas,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 12:25:00,VPN-GW-01,ava.jackson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 12:50:00,FILE-SERVER-02,john.smith,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 13:15:00,IT-PC-004,sarah.williams,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 13:40:00,FIN-PC-011,sophia.anderson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 14:05:00,FILE-SERVER-02,sophia.anderson,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 14:30:00,SALES-PC-002,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 14:55:00,FIN-PC-011,james.taylor,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 15:20:00,FILE-SERVER-02,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 15:45:00,FILE-SERVER-02,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 16:10:00,FILE-SERVER-02,daniel.thomas,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 16:35:00,IT-PC-004,michael.brown,HKCU\Software\Microsoft\Office\16.0\Common\General,LastOpened,Modified
+2026-07-30 10:12:00,FIN-PC-023,john.smith,HKCU\Software\Microsoft\Windows\CurrentVersion\Run,Updater,Created

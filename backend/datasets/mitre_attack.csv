@@ -1,0 +1,11 @@
+technique_id,name,tactic,description
+T1566.001,Spearphishing Attachment,Initial Access,Adversaries send emails with malicious attachments to gain access
+T1059.001,PowerShell,Execution,Command and script execution using PowerShell
+T1204.002,Malicious File,Execution,User executes a malicious file to trigger payload
+T1547.001,Registry Run Keys / Startup Folder,Persistence,Adds programs to run keys for persistence at logon
+T1027,Obfuscated Files or Information,Defense Evasion,Encoding or encrypting content to evade detection
+T1003,OS Credential Dumping,Credential Access,Dumping credentials from LSASS or SAM
+T1082,System Information Discovery,Discovery,Attempts to get detailed system information
+T1021,Remote Services,Lateral Movement,Uses valid accounts to log into remote services
+T1071.001,Web Protocols,Command and Control,Uses HTTP/HTTPS to blend C2 traffic with normal traffic
+T1041,Exfiltration Over C2 Channel,Exfiltration,Data exfiltrated over existing C2 channel

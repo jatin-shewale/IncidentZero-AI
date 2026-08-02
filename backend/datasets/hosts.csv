@@ -1,0 +1,11 @@
+host_id,hostname,ip,os,department,criticality,status
+H001,FIN-PC-023,10.10.20.15,Windows 11,Finance,High,online
+H002,HR-PC-008,10.10.20.18,Windows 11,HR,Medium,online
+H003,DC-SERVER-01,10.10.1.10,Windows Server 2022,Critical Infrastructure,Critical,online
+H004,FIN-PC-011,10.10.20.22,Windows 11,Finance,High,online
+H005,IT-PC-004,10.10.30.5,Windows 11,IT,Medium,online
+H006,ENG-PC-019,10.10.40.9,Windows 11,Engineering,Medium,online
+H007,VPN-GW-01,10.10.1.2,Linux,Network,Critical,online
+H008,SALES-PC-002,10.10.50.3,Windows 11,Sales,Low,online
+H009,LEGAL-PC-006,10.10.60.4,Windows 11,Legal,Medium,online
+H010,FILE-SERVER-02,10.10.1.20,Windows Server 2022,Critical Infrastructure,Critical,online

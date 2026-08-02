@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: incidentzero-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - DEMO_MODE=true
+      - DATABASE_URL=sqlite:///./incidentzero.db
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://frontend:80
+      - ELASTIC_ENABLED=${ELASTIC_ENABLED:-false}
+      - ELASTIC_URL=http://elasticsearch:9200
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=changeme
+      - GEMMA_ENABLED=${GEMMA_ENABLED:-false}
+      - OLLAMA_URL=http://ollama:11434
+      - GEMMA_MODEL=${GEMMA_MODEL:-gemma2:9b}
+    volumes:
+      - ./backend/datasets:/app/datasets
+    networks:
+      - incidentzero-net
+
+  frontend:
+    build: ./frontend
+    container_name: incidentzero-frontend
+    ports:
+      - "5173:80"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - incidentzero-net
+
+  # ---- Optional: real Elasticsearch cluster ----
+  # Enable with:  docker compose --profile elastic up
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    container_name: incidentzero-elasticsearch
+    profiles: ["elastic"]
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    networks:
+      - incidentzero-net
+
+  # ---- Optional: local Gemma runtime via Ollama ----
+  # Enable with:  docker compose --profile gemma up
+  # Then: docker exec -it incidentzero-ollama ollama pull gemma2:9b
+  ollama:
+    image: ollama/ollama:latest
+    container_name: incidentzero-ollama
+    profiles: ["gemma"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - incidentzero-net
+
+networks:
+  incidentzero-net:
+    driver: bridge
+
+volumes:
+  es-data:
+  ollama-data:

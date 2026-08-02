@@ -1,0 +1,7 @@
+indicator,type,threat,confidence,source
+185.22.91.45,IP,C2 Server,95,ThreatIntel
+update-security-check.com,Domain,Malware Infrastructure,90,ThreatIntel
+9af72bc1e4a83d9f6b21c7ea45d21f00,Hash,RAT Malware,98,MalwareDB
+7ab92ff03ac91b7de4f812309abcc88e,Hash,PowerShell Dropper,88,MalwareDB
+45.83.120.19,IP,Known Scanner,60,ThreatIntel
+malicious-doc-cdn.net,Domain,Phishing Infrastructure,85,ThreatIntel

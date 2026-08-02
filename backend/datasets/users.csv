@@ -1,0 +1,11 @@
+user_id,username,department,role,email,location,status
+U001,john.smith,Finance,Financial Analyst,john.smith@novafinance.com,New York,active
+U002,sarah.williams,HR,HR Manager,sarah.williams@novafinance.com,London,active
+U003,michael.brown,IT,System Admin,michael.brown@novafinance.com,Boston,active
+U004,emily.davis,Finance,Controller,emily.davis@novafinance.com,New York,active
+U005,david.wilson,Engineering,DevOps Engineer,david.wilson@novafinance.com,Austin,active
+U006,olivia.moore,Legal,Counsel,olivia.moore@novafinance.com,Chicago,active
+U007,james.taylor,Finance,Accountant,james.taylor@novafinance.com,New York,active
+U008,sophia.anderson,Sales,Account Executive,sophia.anderson@novafinance.com,Miami,active
+U009,daniel.thomas,IT,Network Engineer,daniel.thomas@novafinance.com,Boston,active
+U010,ava.jackson,HR,Recruiter,ava.jackson@novafinance.com,London,active
