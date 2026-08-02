@@ -23,7 +23,7 @@ from app.core.websocket import manager
 from app.agents import (
     planner_agent, elastic_agent, hunter_agent, ioc_agent, timeline_agent,
     attack_graph_agent, mitre_agent, risk_agent, response_agent,
-    explainability_agent, report_agent,
+    explainability_agent, report_agent, benchmark_agent,
 )
 
 PIPELINE_STEPS = [
@@ -125,6 +125,9 @@ async def run_investigation(db: Session, investigation_id: str, query: str, host
     await _emit(investigation_id, "agent_done", {"agent": "MITRE", "output": {"techniques": [m["technique_id"] for m in mitre]}})
     await asyncio.sleep(0.15)
 
+    # Benchmark view (OWASP / CIS)
+    benchmark = benchmark_agent.summarize(findings)
+
     # 8. RISK ENGINE
     t0 = time.time()
     await _emit(investigation_id, "agent_started", {"agent": "Risk Engine"})
@@ -186,6 +189,7 @@ async def run_investigation(db: Session, investigation_id: str, query: str, host
         "timeline": timeline,
         "graph": graph,
         "mitre": mitre,
+        "benchmarks": benchmark,
         "risk": risk,
         "response": response,
         "narrative": narrative,

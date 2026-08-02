@@ -14,7 +14,7 @@ export default function TimelineList({ events }) {
         <div key={i} className="relative pb-5 cursor-pointer" onClick={() => setOpen(open === i ? null : i)}>
           <span
             className="absolute -left-[34px] top-0.5 w-3.5 h-3.5 rounded-full border-[3px]"
-            style={{ background: severityToColor(e.severity), borderColor: "#111827" }}
+            style={{ background: severityToColor(e.severity), borderColor: "#090D22" }}
           />
           <div className="font-mono text-[11px] text-accent font-semibold">{e.time}</div>
           <div className="font-semibold text-[14px] mt-0.5">{e.event}</div>

@@ -5,6 +5,7 @@ import { Card, Badge } from "../components/cards/ui";
 import { investigationService } from "../services/investigation";
 import { useInvestigationContext } from "../store/InvestigationContext";
 import { useInvestigationSocket } from "../store/useInvestigationSocket";
+import { useToast } from "../store/ToastContext";
 import AgentPipeline, { deriveAgentStatus } from "../components/agents/AgentPipeline";
 import LiveConsole from "../components/agents/LiveConsole";
 import AttackGraphView from "../components/graphs/AttackGraphView";
@@ -18,6 +19,7 @@ export default function InvestigationDetail() {
   const [investigations, setInvestigations] = useState([]);
   const [inv, setInv] = useState(null);
   const [tab, setTab] = useState("Summary");
+  const { addToast } = useToast();
   const [evidence, setEvidence] = useState([]);
   const [graph, setGraph] = useState({ nodes: [], edges: [] });
   const [timeline, setTimeline] = useState([]);
@@ -46,6 +48,12 @@ export default function InvestigationDetail() {
     investigationService.response(activeId).then(setResponse).catch(() => {});
   }, [activeId, isComplete]);
 
+  useEffect(() => {
+    if (isComplete && activeId) {
+      addToast("Autonomous agent pipeline analysis complete.", "success");
+    }
+  }, [isComplete, activeId]);
+
   if (!activeId) {
     return (
       <div>
@@ -59,9 +67,9 @@ export default function InvestigationDetail() {
           ) : (
             investigations.map((i) => (
               <div key={i.id} onClick={() => setActiveId(i.id)}
-                   className="border border-border rounded-lg p-3 mb-2 bg-card2 cursor-pointer hover:border-accent">
+                   className="border border-white/5 rounded-xl p-3.5 mb-2.5 bg-slate-950/20 backdrop-blur-sm cursor-pointer hover:border-accent/40 hover:bg-slate-950/40 hover:shadow-[0_0_15px_rgba(0,242,254,0.1)] transition-all duration-200">
                 <div className="font-mono text-[11px] text-tx2">{i.id}</div>
-                <div className="font-semibold text-[13.5px]">{i.title}</div>
+                <div className="font-semibold text-[13.5px] text-tx">{i.title}</div>
               </div>
             ))
           )}
@@ -95,7 +103,7 @@ export default function InvestigationDetail() {
         {TABS.map((t) => (
           <button
             key={t}
-            onClick={() => setTab(t)}
+            onClick={() => { setTab(t); addToast(`Switched to: ${t}`, "info"); }}
             className={`px-4 py-2.5 text-[12.5px] font-semibold whitespace-nowrap border-b-2 -mb-px ${
               tab === t ? "text-accent border-accent" : "text-tx2 border-transparent"
             }`}
@@ -117,9 +125,9 @@ export default function InvestigationDetail() {
         <Card title="Evidence Collected">
           {evidence.length === 0 && <p className="text-tx2 text-[13px]">No evidence yet.</p>}
           {evidence.map((e, i) => (
-            <div key={i} className="border border-border bg-card2 rounded-lg p-3.5 mb-2.5 ev-fade" style={{ animationDelay: `${i * 0.06}s` }}>
+            <div key={i} className="border border-white/5 bg-slate-950/20 backdrop-blur-sm rounded-xl p-3.5 mb-2.5 ev-fade" style={{ animationDelay: `${i * 0.06}s` }}>
               <div className="flex justify-between items-center mb-1.5">
-                <div className="font-semibold text-[13px]">Evidence #{i + 1} · {e.finding}</div>
+                <div className="font-semibold text-[13px] text-tx">Evidence #{i + 1} · {e.finding}</div>
                 <Badge severity={e.severity}>{e.severity}</Badge>
               </div>
               <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-[11.5px] text-tx2 mt-2">
@@ -127,7 +135,7 @@ export default function InvestigationDetail() {
                 <div>Confidence <b className="text-tx font-mono">{Math.round(e.confidence)}%</b></div>
                 <div>Technique <b className="text-tx font-mono">{e.technique_id}</b></div>
               </div>
-              <div className="mt-2 pt-2 border-t border-dashed border-border text-[12px] text-tx2">
+              <div className="mt-2 pt-2 border-t border-dashed border-white/10 text-[12px] text-tx2">
                 <b className="text-tx">Why it matters:</b> {e.reason}
               </div>
             </div>

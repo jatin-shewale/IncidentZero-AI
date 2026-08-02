@@ -1,12 +1,21 @@
 """Report Generator Agent — assembles the final technical / executive markdown report."""
 from datetime import datetime
 
+from app.agents.benchmark_agent import summarize, render_section
+
+
+def _benchmark_view(findings: list) -> str:
+    return render_section(findings)
+
 
 def generate(kind: str, investigation: dict, findings: list, timeline: list,
              iocs: list, mitre: list, response: dict) -> str:
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
     if kind == "executive":
+        compliance = summarize(findings)
+        owasp_exec = ", ".join(f"{i['control']} ({i['name']})" for i in compliance["owasp"])
+        cis_exec = ", ".join(f"{i['control']} ({i['name']})" for i in compliance["cis"])
         return f"""# Executive Summary — {investigation['id']}
 
 **Generated:** {now} by IncidentZero AI
@@ -24,6 +33,10 @@ def generate(kind: str, investigation: dict, findings: list, timeline: list,
 
 ## Long-Term Follow Up
 {chr(10).join('- ' + a for a in response.get('long_term', []))}
+
+## OWASP / CIS Benchmark View
+- OWASP: {owasp_exec}
+- CIS: {cis_exec}
 """
 
     # technical report
@@ -33,7 +46,10 @@ def generate(kind: str, investigation: dict, findings: list, timeline: list,
     )
     tl_lines = "\n".join(f"- `{t['time']}` — {t['event']} ({t['source']})" for t in timeline)
     ioc_lines = "\n".join(f"| {i['type']} | {i['value']} | {i['risk']} | {i['confidence']}% |" for i in iocs)
-    mitre_lines = "\n".join(f"- **{m['technique_id']}** — {m['name']} ({m['tactic']}), confidence {m['confidence']}%" for m in mitre)
+    mitre_lines = "\n".join(
+        f"- **{m['technique_id']}** — {m['name']} ({m['tactic']}), confidence {m['confidence']}%"
+        for m in mitre
+    )
 
     return f"""# Technical Incident Report — {investigation['id']}
 
@@ -58,6 +74,8 @@ def generate(kind: str, investigation: dict, findings: list, timeline: list,
 
 ## MITRE ATT&CK Mapping
 {mitre_lines or '_No techniques mapped._'}
+
+{_benchmark_view(findings)}
 
 ## Recommended Remediation
 ### Immediate

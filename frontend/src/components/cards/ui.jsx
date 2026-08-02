@@ -1,9 +1,9 @@
 export function Card({ title, icon, action, children, className = "" }) {
   return (
-    <div className={`bg-card border border-border rounded-xl p-4.5 p-[18px] ${className}`}>
+    <div className={`glass-card rounded-2xl p-5.5 p-[22px] ${className}`}>
       {title && (
         <div className="flex items-center justify-between mb-3.5">
-          <div className="font-display text-[14.5px] font-semibold">{title}</div>
+          <div className="font-display text-[14.5px] font-bold tracking-tight text-white">{title}</div>
           {action}
         </div>
       )}
@@ -42,10 +42,10 @@ export function ConfidenceTag({ value }) {
 }
 
 export function Button({ children, variant = "default", size = "md", className = "", ...props }) {
-  const base = "inline-flex items-center gap-1.5 rounded-lg font-semibold border transition-colors";
+  const base = "inline-flex items-center gap-1.5 rounded-lg font-bold border transition-all duration-200";
   const variants = {
-    default: "bg-card2 text-tx border-border hover:border-accent hover:text-accent",
-    primary: "bg-accent text-[#031018] border-accent hover:bg-cyan-300",
+    default: "bg-white/5 text-tx border-white/10 hover:bg-white/10 hover:border-accent/40",
+    primary: "bg-accent text-[#040714] border-accent hover:bg-[#4df6ff] hover:shadow-[0_0_20px_rgba(0,242,254,0.45)]",
   };
   const sizes = { sm: "px-2.5 py-1.5 text-[11.5px]", md: "px-3.5 py-2 text-[12.5px]" };
   return (

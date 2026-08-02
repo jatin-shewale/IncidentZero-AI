@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 
 const FEATURES = [
   ["01", "Autonomous Hunting", "Gemma plans its own investigation — deciding which auth, process, network and DNS evidence it needs before it asks Elastic for anything."],
-  ["02", "Multi-Agent Correlation", "Ten specialized agents — Planner, Hunter, IOC, Timeline, MITRE, Response, Explainability — collaborate on one shared investigation graph."],
+  ["02", "Multi-Agent Correlation", "Ten specialized agents — Planner, Hunter, IOC, Timeline, MITRE, Benchmarks, Response, Explainability — collaborate on one shared investigation graph."],
   ["03", "Attack Reconstruction", "Raw events become a connected story: email → macro → PowerShell → persistence → credential theft → C2, rendered as an interactive graph."],
   ["04", "MITRE ATT&CK Mapping", "Every technique observed is mapped to its ATT&CK ID with supporting evidence and a calibrated confidence score."],
-  ["05", "Explainable by Design", "No finding ships without evidence, reasoning, source logs and a confidence score. If evidence is missing, the AI says so."],
-  ["06", "Local-First", "Investigation reasoning runs against your own Elastic cluster via MCP, and Gemma runs locally through Ollama. Nothing has to leave your network."],
+  ["05", "OWASP / CIS Benchmarks", "The same incident evidence is translated into OWASP Top 10 and CIS Controls themes so reviewers can connect attacks to hardening actions."],
+  ["06", "Explainable by Design", "No finding ships without evidence, reasoning, source logs and a confidence score. If evidence is missing, the AI says so."],
+  ["07", "Local-First", "Investigation reasoning runs against your own Elastic cluster via MCP, and Gemma runs locally through Ollama. Nothing has to leave your network."],
 ];
 
 export default function Landing() {
@@ -15,14 +16,14 @@ export default function Landing() {
     <div className="min-h-screen relative z-10 flex flex-col items-center px-6 pt-16 pb-24">
       <div className="w-full max-w-[1180px] flex justify-between items-center mb-16">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center font-display font-bold text-[13px] text-[#020617]"
-               style={{ background: "conic-gradient(from 200deg, #22D3EE, #6366f1, #22D3EE)" }}>IZ</div>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center font-display font-bold text-[13px] text-[#040714] shadow-[0_0_15px_rgba(0,242,254,0.35)]"
+               style={{ background: "linear-gradient(135deg, #00F2FE, #8B5CF6)" }}>IZ</div>
           <div>
-            <div className="font-display font-bold text-[15px] leading-tight">IncidentZero AI</div>
+            <div className="font-display font-bold text-[15px] leading-tight text-white">IncidentZero AI</div>
             <div className="text-[10px] text-tx2 font-mono">v1.0 · Production Build</div>
           </div>
         </div>
-        <button onClick={() => navigate("/dashboard")} className="border border-border rounded-lg px-3.5 py-2 text-[12.5px] font-semibold hover:border-accent hover:text-accent transition-colors">
+        <button onClick={() => navigate("/dashboard")} className="bg-white/5 border border-white/10 hover:border-accent/40 hover:text-accent hover:bg-white/10 rounded-xl px-4 py-2 text-[12.5px] font-bold transition-all duration-200 shadow-md">
           Launch Dashboard →
         </button>
       </div>
@@ -40,7 +41,7 @@ export default function Landing() {
           correlates evidence across agents, reconstructs the attack story, and explains every conclusion — before a human even opens the alert.
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <button onClick={() => navigate("/dashboard")} className="bg-accent text-[#031018] px-6 py-3.5 rounded-lg font-bold text-[14px] hover:bg-cyan-300 transition-colors">
+          <button onClick={() => navigate("/dashboard")} className="bg-accent text-[#040714] px-6 py-3.5 rounded-lg font-bold text-[14px] hover:bg-[#4df6ff] hover:shadow-[0_0_25px_rgba(0,242,254,0.45)] transition-all duration-200">
             Launch Dashboard
           </button>
           <button onClick={() => document.getElementById("arch").scrollIntoView({ behavior: "smooth" })}
@@ -61,9 +62,9 @@ export default function Landing() {
 
       <div className="grid grid-cols-3 gap-4 max-w-[1000px] w-full mt-24 max-[820px]:grid-cols-2 max-[560px]:grid-cols-1">
         {FEATURES.map(([num, title, body]) => (
-          <div key={num} className="bg-card border border-border rounded-2xl p-5.5 p-[22px]">
-            <div className="font-mono text-[11px] text-accent mb-2.5">{num}</div>
-            <h4 className="font-display text-[15.5px] mb-2 font-semibold">{title}</h4>
+          <div key={num} className="glass-card rounded-2xl p-5.5 p-[22px] hover:border-accent/30 hover:shadow-[0_8px_30px_rgba(0,242,254,0.05)] transition-all duration-300">
+            <div className="font-mono text-[11px] text-accent mb-2.5 tracking-wider font-semibold">{num}</div>
+            <h4 className="font-display text-[15.5px] mb-2 font-bold text-white">{title}</h4>
             <p className="text-tx2 text-[13px] leading-relaxed">{body}</p>
           </div>
         ))}
@@ -79,7 +80,7 @@ export default function Landing() {
       </div>
 
       <footer className="mt-28 text-slate-600 text-[12px] text-center font-mono">
-        IncidentZero AI · Autonomous Multi-Agent SOC Investigation Platform · Live-analyzing "Operation ShadowFox"
+        IncidentZero AI · Autonomous Multi-Agent SOC Investigation Platform · Live-analyzing active security alerts
       </footer>
     </div>
   );
@@ -87,8 +88,8 @@ export default function Landing() {
 
 function CompareCol({ title, steps, win }) {
   return (
-    <div className={`flex-1 min-w-[280px] bg-card border rounded-2xl p-5.5 p-[22px] ${win ? "border-accent/40" : "border-border"}`}>
-      <h5 className={`font-display text-[14px] mb-3.5 ${win ? "text-accent" : "text-tx2"}`}>{title.toUpperCase()}</h5>
+    <div className={`flex-1 min-w-[280px] glass-card rounded-2xl p-5.5 p-[22px] ${win ? "border-accent/30 shadow-[0_0_25px_rgba(0,242,254,0.05)]" : ""}`}>
+      <h5 className={`font-display text-[14px] mb-3.5 font-bold ${win ? "text-accent" : "text-tx2"}`}>{title.toUpperCase()}</h5>
       {steps.map((s, i) => (
         <div key={s}>
           <div className={`py-2 text-[13px] ${win ? "text-tx" : "text-tx2"}`}>{s}</div>

@@ -2,24 +2,31 @@ import { useEffect, useState } from "react";
 import Topbar from "../components/sidebar/Topbar";
 import { Card } from "../components/cards/ui";
 import { agentService } from "../services/investigation";
+import { useToast } from "../store/ToastContext";
 import { API_URL } from "../services/api";
 
 export default function Settings() {
   const [status, setStatus] = useState(null);
+  const { addToast } = useToast();
 
   useEffect(() => {
-    agentService.status().then(setStatus).catch(() => {});
+    agentService.status()
+      .then((res) => {
+        setStatus(res);
+        addToast("System status retrieved successfully.", "success");
+      })
+      .catch(() => addToast("Failed to fetch system configuration status.", "error"));
   }, []);
 
   return (
     <div>
-      <Topbar title="Settings" subtitle="System configuration (read-only — edit backend/.env to change)" />
+      <Topbar title="Settings" subtitle="System Configuration" />
 
       <div className="grid grid-cols-2 gap-3.5 max-md:grid-cols-1">
         <Card title="🧠 AI Configuration">
           <Row label="Backend URL" value={API_URL} />
           <Row label="Gemma Model" value={status?.gemma_model || "—"} />
-          <Row label="Gemma Status" value={status?.gemma_online ? "Online (Ollama)" : "Offline — deterministic fallback active"} />
+          <Row label="Gemma Status" value={status?.gemma_online ? "Online (Ollama)" : "Deterministic Engine"} />
           <p className="text-[11.5px] text-tx2 mt-3">
             To enable Gemma: install <a className="text-accent" href="https://ollama.com" target="_blank" rel="noreferrer">Ollama</a>,
             run <code className="font-mono">ollama pull gemma2:9b</code> and <code className="font-mono">ollama serve</code>,
@@ -41,13 +48,13 @@ export default function Settings() {
             The same security tools (search_logs, get_process_tree, lookup_ioc, search_mitre…) are exposed over the
             Model Context Protocol in <code className="font-mono">backend/app/mcp_layer/server.py</code>. Run it standalone with:
           </p>
-          <pre className="bg-[#020617] border border-border rounded-lg p-3 mt-2.5 text-[11.5px] font-mono text-tx2 overflow-x-auto">
+          <pre className="bg-slate-950/40 backdrop-blur-md border border-white/5 rounded-xl p-3.5 mt-2.5 text-[11.5px] font-mono text-tx overflow-x-auto shadow-inner">
 python -m app.mcp_layer.server
           </pre>
         </Card>
 
         <Card title="⚙ Runtime">
-          <Row label="Mode" value={status?.demo_mode ? "Demo" : "Production"} />
+          <Row label="Mode" value={status?.demo_mode ? "Developer Sandbox" : "Production Enterprise"} />
           <Row label="Agents in pipeline" value={status?.agents?.length ?? "—"} />
         </Card>
       </div>
@@ -57,7 +64,7 @@ python -m app.mcp_layer.server
 
 function Row({ label, value }) {
   return (
-    <div className="flex justify-between items-center py-2 border-b border-border last:border-none text-[12.5px]">
+    <div className="flex justify-between items-center py-2 border-b border-white/5 last:border-none text-[12.5px]">
       <span className="text-tx2">{label}</span>
       <span className="font-mono text-tx">{value}</span>
     </div>

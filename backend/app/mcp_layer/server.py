@@ -1,20 +1,3 @@
-"""
-IncidentZero AI - MCP Server
-=============================
-Exposes the security data engine (Elasticsearch or local CSV fallback) as
-MCP tools, so any MCP-compatible client (Claude Desktop, an MCP-aware
-Ollama setup, Claude Code, etc.) can query your security logs directly.
-
-This is the same tool surface the in-process agents use
-(app/gemma/tools.py) — kept consistent on purpose.
-
-Run standalone:
-    pip install "mcp[cli]"
-    python -m app.mcp_layer.server
-
-Then point any MCP client at this process over stdio, or run
-`mcp dev app/mcp_layer/server.py` for the MCP inspector UI.
-"""
 import sys
 import os
 

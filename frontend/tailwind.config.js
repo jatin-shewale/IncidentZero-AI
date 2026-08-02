@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#050816",
-        bg2: "#0B1120",
-        card: "#111827",
-        card2: "#161f30",
-        border: "#1e293b",
-        accent: "#22D3EE",
-        green: "#22C55E",
+        bg: "#040714",
+        bg2: "#090D22",
+        card: "rgba(15, 23, 42, 0.45)",
+        card2: "rgba(30, 41, 59, 0.5)",
+        border: "rgba(255, 255, 255, 0.08)",
+        accent: "#00F2FE",
+        green: "#10B981",
         warn: "#F59E0B",
-        crit: "#EF4444",
+        crit: "#F43F5E",
         tx: "#F8FAFC",
         tx2: "#94A3B8",
       },

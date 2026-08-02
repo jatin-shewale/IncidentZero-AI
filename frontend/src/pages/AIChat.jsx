@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Topbar from "../components/sidebar/Topbar";
 import { chatService } from "../services/investigation";
 import { useInvestigationContext } from "../store/InvestigationContext";
+import { useToast } from "../store/ToastContext";
 import { Send } from "lucide-react";
 
 const SUGGESTIONS = [
@@ -20,6 +21,7 @@ export default function AIChat() {
   ]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const { addToast } = useToast();
   const logRef = useRef(null);
 
   useEffect(() => {
@@ -34,13 +36,16 @@ export default function AIChat() {
       setInput("");
       return;
     }
+    addToast("Consulting autonomous analyst agents...", "info");
     setMessages((m) => [...m, { role: "user", text: q }]);
     setInput("");
     setTyping(true);
     try {
       const res = await chatService.send(activeId, q);
+      addToast("Response received.", "success");
       setMessages((m) => [...m, { role: "ai", text: res.answer, confidence: res.confidence }]);
     } catch (e) {
+      addToast("Could not contact the chatbot engine.", "error");
       setMessages((m) => [...m, { role: "ai", text: "I couldn't reach the backend just now. Make sure the FastAPI server is running." }]);
     } finally {
       setTyping(false);
@@ -50,10 +55,10 @@ export default function AIChat() {
   return (
     <div>
       <Topbar title="AI Assistant" subtitle="Ask your SOC teammate — grounded in retrieved evidence, never invented" />
-      <div className="bg-card border border-border rounded-xl p-4.5 p-[18px] flex flex-col h-[calc(100vh-220px)] min-h-[420px]">
+      <div className="glass-card rounded-xl p-4.5 p-[18px] flex flex-col h-[calc(100vh-220px)] min-h-[420px]">
         <div className="flex gap-2 flex-wrap mb-3">
           {SUGGESTIONS.map((s) => (
-            <button key={s} onClick={() => send(s)} className="text-[11.5px] border border-border rounded-full px-3 py-1.5 text-tx2 hover:text-accent hover:border-accent bg-card2">
+            <button key={s} onClick={() => send(s)} className="text-[11.5px] border border-white/5 rounded-full px-3 py-1.5 text-tx2 hover:text-accent hover:border-accent hover:shadow-[0_0_10px_rgba(0,242,254,0.1)] bg-slate-950/20 backdrop-blur-sm transition-all duration-200">
               {s}
             </button>
           ))}
@@ -70,23 +75,23 @@ export default function AIChat() {
           {messages.map((m, i) => (
             <div key={i} className={`flex gap-2.5 mb-4 max-w-[80%] ${m.role === "user" ? "ml-auto flex-row-reverse" : ""}`}>
               <div className={`w-7 h-7 rounded-lg shrink-0 flex items-center justify-center font-display font-bold text-[11px] ${
-                m.role === "ai" ? "bg-gradient-to-br from-accent to-indigo-500 text-[#031018]" : "bg-card2 text-tx"
+                m.role === "ai" ? "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white" : "bg-slate-950/40 text-tx border border-white/5"
               }`}>
                 {m.role === "ai" ? "IZ" : "A"}
               </div>
               <div className={`rounded-xl px-3.5 py-3 text-[13px] leading-relaxed border ${
-                m.role === "user" ? "bg-accent/10 border-accent/25" : "bg-card2 border-border"
+                m.role === "user" ? "bg-accent/15 border-accent/25 text-tx shadow-[0_0_15px_rgba(0,242,254,0.05)]" : "bg-slate-950/20 border-white/5 text-tx"
               }`}>
                 {m.text}
                 {m.confidence != null && (
-                  <div className="font-mono text-[11px] text-accent mt-2">Confidence: {Math.round(m.confidence)}%</div>
+                  <div className="font-mono text-[11px] text-accent mt-2 font-semibold">Confidence: {Math.round(m.confidence)}%</div>
                 )}
               </div>
             </div>
           ))}
           {typing && (
             <div className="flex gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-lg shrink-0 flex items-center justify-center font-display font-bold text-[11px] bg-gradient-to-br from-accent to-indigo-500 text-[#031018]">IZ</div>
+              <div className="w-7 h-7 rounded-lg shrink-0 flex items-center justify-center font-display font-bold text-[11px] bg-gradient-to-br from-indigo-500 to-indigo-600 text-white">IZ</div>
               <div className="rounded-xl px-3.5 py-3 bg-card2 border border-border">
                 <span className="typing-dot inline-block w-1.5 h-1.5 bg-tx2 rounded-full mr-1" />
                 <span className="typing-dot inline-block w-1.5 h-1.5 bg-tx2 rounded-full mr-1" style={{ animationDelay: ".15s" }} />
@@ -96,15 +101,15 @@ export default function AIChat() {
           )}
         </div>
 
-        <div className="flex gap-2.5 border-t border-border pt-3.5">
+        <div className="flex gap-2.5 border-t border-white/5 pt-3.5">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && send()}
             placeholder="Ask your SOC teammate anything…"
-            className="flex-1 bg-card2 border border-border rounded-lg px-3.5 py-3 text-[13px] focus:outline-none focus:border-accent"
+            className="flex-1 bg-slate-950/40 backdrop-blur-md border border-white/5 rounded-lg px-3.5 py-3 text-[13px] text-tx placeholder-slate-500 focus:outline-none focus:border-accent/50 focus:shadow-[0_0_15px_rgba(0,242,254,0.15)] transition-all duration-200"
           />
-          <button onClick={() => send()} className="bg-accent text-[#031018] px-4 rounded-lg font-bold text-[12.5px] flex items-center gap-1.5 hover:bg-cyan-300">
+          <button onClick={() => send()} className="bg-accent text-[#040714] px-4 rounded-lg font-bold text-[12.5px] flex items-center gap-1.5 hover:bg-[#4df6ff] hover:shadow-[0_0_15px_rgba(0,242,254,0.35)] transition-all duration-200">
             <Send size={14} /> Send
           </button>
         </div>

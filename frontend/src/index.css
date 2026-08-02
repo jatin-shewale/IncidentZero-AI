@@ -5,22 +5,29 @@
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 body {
-  background: #050816;
+  background: #040714;
   color: #F8FAFC;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #0B1120; }
-::-webkit-scrollbar-thumb { background: #243046; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #070A1E; }
+::-webkit-scrollbar-thumb { background: #1C2742; border-radius: 4px; }
+
+.glass-card {
+  backdrop-filter: blur(12px) saturate(140%);
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
 .grid-bg {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image:
-    linear-gradient(rgba(34,211,238,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,211,238,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(0, 242, 254, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.015) 1px, transparent 1px);
   background-size: 42px 42px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 90%);
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 0%, #000 40%, transparent 95%);
 }
 
 @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
@@ -37,3 +44,11 @@ body {
 
 @keyframes typing-bounce { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 .typing-dot { animation: typing-bounce 1s infinite; }
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-slide-down {
+  animation: slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

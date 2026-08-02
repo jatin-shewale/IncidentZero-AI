@@ -1,8 +1,14 @@
 import { useMemo, useState } from "react";
 
 const TYPE_COLOR = {
-  Host: "#818cf8", User: "#818cf8", Process: "#22D3EE", Domain: "#EF4444",
-  IP: "#EF4444", Technique: "#EF4444", File: "#F59E0B", Artifact: "#94a3b8",
+  Host: "#818cf8",
+  User: "#94a3b8",
+  Process: "#00F2FE",
+  Domain: "#94a3b8",
+  IP: "#94a3b8",
+  Technique: "#F59E0B",
+  File: "#38bdf8",
+  Artifact: "#94a3b8",
 };
 
 function layout(nodes, edges) {
@@ -29,7 +35,9 @@ function layout(nodes, edges) {
     }
   }
   const maxDepth = Math.max(0, ...Object.values(depth));
-  nodes.forEach((n) => { if (depth[n.id] === undefined) depth[n.id] = maxDepth + 1; });
+  nodes.forEach((n) => {
+    if (depth[n.id] === undefined) depth[n.id] = maxDepth + 1;
+  });
 
   const columns = {};
   nodes.forEach((n) => {
@@ -39,7 +47,8 @@ function layout(nodes, edges) {
   });
 
   const positioned = {};
-  const COL_W = 190, ROW_H = 62;
+  const COL_W = 190;
+  const ROW_H = 62;
   Object.entries(columns).forEach(([d, list]) => {
     list.forEach((n, i) => {
       positioned[n.id] = { x: Number(d) * COL_W + 20, y: i * ROW_H + 20 };
@@ -57,12 +66,12 @@ export default function AttackGraphView({ nodes, edges }) {
   const { positioned, width, height } = useMemo(() => layout(nodes, edges), [nodes, edges]);
 
   if (!nodes.length) {
-    return <div className="text-tx2 text-[13px] py-10 text-center">Run the investigation to build the attack graph.</div>;
+    return <div className="text-tx2 text-[13px] py-10 text-center">No evidence graph was built for this investigation.</div>;
   }
 
   return (
     <div>
-      <div className="bg-[#020617] border border-border rounded-xl p-2.5 overflow-auto">
+      <div className="bg-[#050814]/90 border border-white/5 rounded-xl p-4 overflow-auto shadow-[inset_0_0_20px_rgba(0,242,254,0.03)]">
         <svg viewBox={`0 0 ${width} ${height}`} width="100%" style={{ minWidth: Math.min(width, 1400) }}>
           <defs>
             <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
@@ -70,30 +79,44 @@ export default function AttackGraphView({ nodes, edges }) {
             </marker>
           </defs>
           {edges.map((e, i) => {
-            const s = positioned[e.source], t = positioned[e.target];
+            const s = positioned[e.source];
+            const t = positioned[e.target];
             if (!s || !t) return null;
-            const mx = (s.x + t.x) / 2 + 60, my = (s.y + t.y) / 2 + 8;
+            const mx = (s.x + t.x) / 2 + 60;
+            const my = (s.y + t.y) / 2 + 8;
             return (
               <g key={i}>
-                <line x1={s.x + 150} y1={s.y + 16} x2={t.x} y2={t.y + 16} stroke="#334155" strokeWidth="1.4" markerEnd="url(#arrow)" />
-                <text x={mx} y={my} fill="#475569" fontSize="8.5" fontFamily="JetBrains Mono">{e.relation}</text>
+                <line x1={s.x + 150} y1={s.y + 16} x2={t.x} y2={t.y + 16} stroke="#1E293B" strokeWidth="1.4" markerEnd="url(#arrow)" />
+                <text x={mx} y={my} fill="#475569" fontSize="8.5" fontFamily="JetBrains Mono">
+                  {e.relation}
+                </text>
               </g>
             );
           })}
           {nodes.map((n) => {
             const p = positioned[n.id];
             if (!p) return null;
-            const color = TYPE_COLOR[n.type] || "#22D3EE";
+            const color = n.malicious ? "#F43F5E" : (TYPE_COLOR[n.type] || "#00F2FE");
             const isSelected = selected === n.id;
             return (
               <g key={n.id} className="cursor-pointer" onClick={() => setSelected(n.id)}>
-                <rect x={p.x} y={p.y} width="150" height="34" rx="8" fill="#111827"
-                      stroke={color} strokeWidth={isSelected ? 2.5 : 1.4} />
+                <rect
+                  x={p.x}
+                  y={p.y}
+                  width="150"
+                  height="34"
+                  rx="8"
+                  fill="#090D22"
+                  stroke={color}
+                  strokeWidth={isSelected ? 2.5 : 1.4}
+                />
                 <circle cx={p.x + 13} cy={p.y + 17} r="3.5" fill={color} />
                 <text x={p.x + 24} y={p.y + 21} fill="#F8FAFC" fontSize="10.5" fontFamily="Inter">
-                  {n.label.length > 17 ? n.label.slice(0, 16) + "…" : n.label}
+                  {n.label.length > 17 ? `${n.label.slice(0, 16)}...` : n.label}
                 </text>
-                <text x={p.x + 8} y={p.y + 47} fill={color} fontSize="9" fontFamily="JetBrains Mono">{n.type}</text>
+                <text x={p.x + 8} y={p.y + 47} fill={color} fontSize="9" fontFamily="JetBrains Mono">
+                  {n.type}
+                </text>
               </g>
             );
           })}
@@ -103,7 +126,11 @@ export default function AttackGraphView({ nodes, edges }) {
         {selected
           ? (() => {
               const n = nodes.find((x) => x.id === selected);
-              return <span><b className="text-tx">{n.label}</b> <span className="text-tx2">({n.type})</span> — node observed during evidence correlation for this investigation.</span>;
+              return (
+                <span>
+                  <b className="text-tx">{n.label}</b> <span className="text-tx2">({n.type})</span> - node observed during evidence correlation for this investigation.
+                </span>
+              );
             })()
           : "Click a node to inspect it."}
       </div>

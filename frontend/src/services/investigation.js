@@ -9,6 +9,7 @@ export const investigationService = {
   evidence: (id) => api.get(`/api/investigations/${id}/evidence`).then((r) => r.data),
   iocs: (id) => api.get(`/api/investigations/${id}/iocs`).then((r) => r.data),
   mitre: (id) => api.get(`/api/investigations/${id}/mitre`).then((r) => r.data),
+  benchmarks: (id) => api.get(`/api/investigations/${id}/benchmarks`).then((r) => r.data),
   response: (id) => api.get(`/api/investigations/${id}/response`).then((r) => r.data),
 };
 

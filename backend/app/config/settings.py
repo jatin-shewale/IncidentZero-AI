@@ -40,7 +40,7 @@ class Settings:
     # --- Gemma / Ollama (local LLM reasoning engine) ---
     GEMMA_ENABLED: bool = os.getenv("GEMMA_ENABLED", "false").lower() == "true"
     OLLAMA_URL: str = os.getenv("OLLAMA_URL", "http://localhost:11434")
-    GEMMA_MODEL: str = os.getenv("GEMMA_MODEL", "gemma2:9b")
+    GEMMA_MODEL: str = os.getenv("GEMMA_MODEL", "gemma4")
     GEMMA_TEMPERATURE: float = float(os.getenv("GEMMA_TEMPERATURE", "0.2"))
     GEMMA_TIMEOUT_SECONDS: int = int(os.getenv("GEMMA_TIMEOUT_SECONDS", "60"))
 

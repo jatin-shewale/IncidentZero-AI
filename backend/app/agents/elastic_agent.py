@@ -19,6 +19,9 @@ def collect(host: str, required_data: list) -> dict:
     host_ip = _host_ip(host)
     for category in required_data:
         try:
+            if not host or not host_ip:
+                collected[category] = []
+                continue
             if category == "network":
                 # network_logs.csv is keyed by src_ip, not hostname — scope
                 # explicitly so an investigation on one host doesn't pull

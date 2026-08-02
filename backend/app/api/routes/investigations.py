@@ -93,6 +93,14 @@ def mitre(investigation_id: str):
     return result["mitre"]
 
 
+@router.get("/{investigation_id}/benchmarks")
+def benchmarks(investigation_id: str):
+    result = get_cached_result(investigation_id)
+    if not result:
+        return {"owasp": [], "cis": []}
+    return result["benchmarks"]
+
+
 @router.get("/{investigation_id}/response")
 def response_plan(investigation_id: str):
     result = get_cached_result(investigation_id)

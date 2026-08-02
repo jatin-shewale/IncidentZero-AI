@@ -30,11 +30,11 @@ export default function Analytics() {
           <div style={{ width: "100%", height: 260 }}>
             <ResponsiveContainer>
               <BarChart data={statusChart}>
-                <CartesianGrid stroke="#1e293b" strokeDasharray="3 3" />
+                <CartesianGrid stroke="rgba(255, 255, 255, 0.05)" strokeDasharray="3 3" />
                 <XAxis dataKey="status" stroke="#94A3B8" fontSize={11} />
                 <YAxis stroke="#94A3B8" fontSize={11} allowDecimals={false} />
-                <Tooltip contentStyle={{ background: "#111827", border: "1px solid #1e293b", fontSize: 12 }} />
-                <Bar dataKey="count" fill="#22D3EE" radius={[6, 6, 0, 0]} />
+                <Tooltip contentStyle={{ background: "rgba(15, 23, 42, 0.9)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: 8, color: "#F8FAFC", fontSize: 12 }} />
+                <Bar dataKey="count" fill="#00F2FE" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -54,9 +54,9 @@ export default function Analytics() {
 
 function Metric({ label, value, color }) {
   return (
-    <div className="bg-card border border-border rounded-xl px-4.5 px-[18px] py-4">
-      <div className="text-[11.5px] text-tx2 uppercase tracking-wide font-semibold">{label}</div>
-      <div className="font-display text-[28px] font-bold mt-1.5" style={color ? { color } : {}}>{value}</div>
+    <div className="glass-card rounded-2xl px-5 py-4.5 hover:border-white/15 hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)] transition-all duration-200">
+      <div className="text-[11px] text-tx2 uppercase tracking-wider font-bold">{label}</div>
+      <div className="font-display text-[28px] font-bold mt-1.5 text-white" style={color ? { color } : {}}>{value}</div>
     </div>
   );
 }

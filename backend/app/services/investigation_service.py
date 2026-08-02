@@ -1,30 +1,39 @@
 import re
+import uuid
 from datetime import datetime
 from sqlalchemy.orm import Session
 from app.models.incident import Investigation
 from app.data_engine.local_store import local_store
 
-_counter = {"n": 44}
-
-
 def _next_id() -> str:
-    _counter["n"] += 1
-    return f"INC-2026-{_counter['n']:03d}"
+    return f"INC-2026-{uuid.uuid4().hex[:8].upper()}"
 
 
 def _extract_host(query: str) -> str:
-    """Pull a hostname out of a free-text query, defaulting to the first
-    host in inventory if none is mentioned (keeps the API usable for any
-    natural-language phrasing, per the spec's 'natural language investigation
-    request' requirement)."""
+    """Pull a hostname out of a free-text query.
+
+    If no host can be matched, return None instead of guessing a default.
+    That keeps unknown targets from silently collapsing onto a real host.
+    """
     hosts = [h["hostname"] for h in local_store.hosts()]
+    normalized_hosts = {re.sub(r"[^a-z0-9]", "", h.lower()): h for h in hosts}
+    normalized_query = re.sub(r"[^a-z0-9]", "", query.lower())
+
+    for normalized, host_name in normalized_hosts.items():
+        if normalized and normalized in normalized_query:
+            return host_name
+
     for h in hosts:
         if h.lower() in query.lower():
             return h
-    match = re.search(r"\b([A-Z]{2,}-[A-Z0-9]+-\d+)\b", query.upper())
-    if match and match.group(1) in hosts:
-        return match.group(1)
-    return hosts[0] if hosts else "UNKNOWN-HOST"
+
+    match = re.search(r"\b([A-Z]{2,}-[A-Z0-9-]+)\b", query.upper())
+    if match:
+        candidate = match.group(1)
+        if candidate in hosts:
+            return candidate
+
+    return None
 
 
 def create_investigation(db: Session, query: str, host: str = None) -> Investigation:
@@ -32,7 +41,7 @@ def create_investigation(db: Session, query: str, host: str = None) -> Investiga
     target_host = host or _extract_host(query)
     inv = Investigation(
         id=inv_id,
-        title=query.strip()[:120] or f"Investigation of {target_host}",
+        title=query.strip()[:120] or (f"Investigation of {target_host}" if target_host else "Investigation request"),
         query=query,
         host=target_host,
         status="queued",

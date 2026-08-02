@@ -4,6 +4,7 @@ import Topbar from "../components/sidebar/Topbar";
 import { Card, Badge } from "../components/cards/ui";
 import { investigationService, analyticsService } from "../services/investigation";
 import { useInvestigationContext } from "../store/InvestigationContext";
+import { useToast } from "../store/ToastContext";
 import { Play, ArrowRight, Loader2 } from "lucide-react";
 
 export default function Dashboard() {
@@ -14,6 +15,7 @@ export default function Dashboard() {
   const [query, setQuery] = useState("Investigate suspicious activity on FIN-PC-023");
   const [launching, setLaunching] = useState(false);
   const [error, setError] = useState(null);
+  const { addToast } = useToast();
 
   const refresh = () => {
     investigationService.list().then(setInvestigations).catch(() => setError("backend-offline"));
@@ -29,11 +31,14 @@ export default function Dashboard() {
   const launch = async () => {
     if (!query.trim()) return;
     setLaunching(true);
+    addToast("Launching autonomous SOC analyst agents...", "info");
     try {
       const res = await investigationService.create(query);
+      addToast("Agents dispatched! Investigation started.", "success");
       setActiveId(res.investigation_id);
       navigate("/investigation");
     } catch (e) {
+      addToast("Failed to reach security services backend.", "error");
       setError("Could not reach the backend at " + (import.meta.env.VITE_API_URL || "http://localhost:8000"));
     } finally {
       setLaunching(false);
@@ -45,7 +50,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <Topbar title="Command Center" subtitle="Good morning, Analyst — IncidentZero AI is monitoring NovaFinance Technologies" />
+      <Topbar title="Command Center" subtitle="Good morning, Analyst — IncidentZero AI is monitoring corporate infrastructure" />
 
       {error === "backend-offline" && (
         <div className="mb-5 border border-warn/40 bg-warn/10 text-warn text-[13px] rounded-lg px-4 py-3">
@@ -68,12 +73,12 @@ export default function Dashboard() {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && launch()}
             placeholder='e.g. "Investigate suspicious activity on FIN-PC-023"'
-            className="flex-1 min-w-[280px] bg-card2 border border-border rounded-lg px-3.5 py-2.5 text-[13px] focus:outline-none focus:border-accent"
+            className="flex-1 min-w-[280px] bg-slate-950/40 backdrop-blur-md border border-white/5 rounded-xl px-4 py-2.5 text-[13px] focus:outline-none focus:border-accent/50 focus:shadow-[0_0_20px_rgba(0,242,254,0.15)] text-tx placeholder-slate-500 transition-all duration-200"
           />
           <button
             onClick={launch}
             disabled={launching}
-            className="bg-accent text-[#031018] px-4 py-2.5 rounded-lg font-bold text-[12.5px] inline-flex items-center gap-2 hover:bg-cyan-300 disabled:opacity-60"
+            className="bg-accent text-[#040714] px-4.5 py-2.5 rounded-xl font-bold text-[12.5px] inline-flex items-center gap-2 hover:bg-[#4df6ff] hover:shadow-[0_0_20px_rgba(0,242,254,0.45)] transition-all duration-200 disabled:opacity-60"
           >
             {launching ? <Loader2 size={15} className="spin" /> : <Play size={15} />}
             {launching ? "Planning…" : "Investigate"}
@@ -92,19 +97,19 @@ export default function Dashboard() {
           <div
             key={inv.id}
             onClick={() => { setActiveId(inv.id); navigate("/investigation"); }}
-            className="border border-border rounded-lg p-3.5 mb-2.5 bg-card2 cursor-pointer hover:border-accent transition-colors"
+            className="border border-white/5 rounded-xl p-3.5 mb-2.5 bg-slate-950/20 backdrop-blur-sm cursor-pointer hover:border-accent/40 hover:bg-slate-950/40 hover:shadow-[0_0_20px_rgba(0,242,254,0.1)] transition-all duration-200"
           >
             <div className="flex justify-between items-start gap-2.5">
               <div>
                 <div className="font-mono text-[11px] text-tx2">{inv.id}</div>
-                <div className="font-semibold text-[14px] mt-0.5">{inv.title}</div>
+                <div className="font-bold text-[14.5px] text-white mt-0.5">{inv.title}</div>
               </div>
               <Badge severity={inv.severity}>{inv.status.replace(/_/g, " ")}</Badge>
             </div>
             <div className="flex gap-5 mt-2.5 text-[11.5px] text-tx2 flex-wrap">
-              <div>Risk <b className="text-tx font-mono">{Math.round(inv.risk_score)}%</b></div>
-              <div>Host <b className="text-tx font-mono">{inv.host}</b></div>
-              <div>Confidence <b className="text-tx font-mono">{Math.round(inv.confidence)}%</b></div>
+              <div>Risk <b className="text-white font-mono">{Math.round(inv.risk_score)}%</b></div>
+              <div>Host <b className="text-white font-mono">{inv.host}</b></div>
+              <div>Confidence <b className="text-white font-mono">{Math.round(inv.confidence)}%</b></div>
             </div>
           </div>
         ))}
@@ -115,9 +120,9 @@ export default function Dashboard() {
 
 function Metric({ label, value, trend, color }) {
   return (
-    <div className="bg-card border border-border rounded-xl px-4.5 px-[18px] py-4">
-      <div className="text-[11.5px] text-tx2 uppercase tracking-wide font-semibold">{label}</div>
-      <div className="font-display text-[30px] font-bold mt-1.5" style={color ? { color } : {}}>{value}</div>
+    <div className="glass-card rounded-2xl px-5 py-4.5 hover:border-white/15 hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)] transition-all duration-200">
+      <div className="text-[11px] text-tx2 uppercase tracking-wider font-bold">{label}</div>
+      <div className="font-display text-[28px] font-bold mt-1.5 text-white" style={color ? { color } : {}}>{value}</div>
       {trend && <div className="text-[11.5px] text-tx2 mt-1 font-mono">{trend}</div>}
     </div>
   );
