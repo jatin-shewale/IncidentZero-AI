@@ -149,6 +149,34 @@ http://localhost:5173 and follow steps 1–7 above.
 
 To stop: `Ctrl+C`, then `docker compose down`.
 
+### Docker Hub publish flow
+
+If you want to publish the app images to Docker Hub, build and tag the backend and frontend separately. The Ollama image is pulled from Docker Hub; you normally do not push your own copy of it.
+
+```bash
+docker login
+
+# From the project root
+docker build -t jatinshewale06/incidentzero-backend:1.0.0 ./backend
+docker build -t jatinshewale06/incidentzero-frontend:1.0.0 ./frontend
+
+docker push jatinshewale06/incidentzero-backend:1.0.0
+docker push jatinshewale06/incidentzero-frontend:1.0.0
+```
+
+If you want `docker compose` to use those published images, set:
+
+```bash
+export DOCKERHUB_NAMESPACE=jatinshewale06
+export IMAGE_TAG=1.0.0
+```
+
+Then run:
+
+```bash
+docker compose up
+```
+
 ---
 
 ## Optional: enable real Elasticsearch
@@ -196,7 +224,7 @@ https://ollama.com/download — available for macOS, Windows, and Linux.
 ### 2. Pull a Gemma model
 
 ```bash
-ollama pull gemma2:9b
+ollama pull gemma4
 ```
 
 (Smaller laptops: try `gemma2:2b`. More powerful machines: `gemma3:27b` if
@@ -218,7 +246,7 @@ Edit `backend/.env`:
 ```
 GEMMA_ENABLED=true
 OLLAMA_URL=http://localhost:11434
-GEMMA_MODEL=gemma2:9b
+GEMMA_MODEL=gemma4
 ```
 
 Restart the backend. The **Settings** page in the app (and the topbar status

@@ -1,7 +1,6 @@
-version: "3.9"
-
 services:
   backend:
+    image: ${DOCKERHUB_NAMESPACE:-incidentzero}/incidentzero-backend:${IMAGE_TAG:-latest}
     build: ./backend
     container_name: incidentzero-backend
     ports:
@@ -17,19 +16,21 @@ services:
       - ELASTIC_PASSWORD=changeme
       - GEMMA_ENABLED=${GEMMA_ENABLED:-false}
       - OLLAMA_URL=http://ollama:11434
-      - GEMMA_MODEL=${GEMMA_MODEL:-gemma2:9b}
+      - GEMMA_MODEL=${GEMMA_MODEL:-gemma4}
     volumes:
       - ./backend/datasets:/app/datasets
     networks:
       - incidentzero-net
 
   frontend:
-    build: ./frontend
+    image: ${DOCKERHUB_NAMESPACE:-incidentzero}/incidentzero-frontend:${IMAGE_TAG:-latest}
     container_name: incidentzero-frontend
     ports:
       - "5173:80"
-    environment:
-      - VITE_API_URL=http://localhost:8000
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
     depends_on:
       - backend
     networks:
@@ -54,13 +55,16 @@ services:
 
   # ---- Optional: local Gemma runtime via Ollama ----
   # Enable with:  docker compose --profile gemma up
-  # Then: docker exec -it incidentzero-ollama ollama pull gemma2:9b
+  # Then: docker exec -it incidentzero-ollama ollama pull gemma4
   ollama:
     image: ollama/ollama:latest
     container_name: incidentzero-ollama
     profiles: ["gemma"]
+    command: ["serve"]
     ports:
       - "11434:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0
     volumes:
       - ollama-data:/root/.ollama
     networks:
